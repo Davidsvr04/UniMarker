@@ -171,6 +171,63 @@
   display: inline-block;
 }
 
+.tabla-insumos {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+}
+
+.tabla-insumos th {
+  background-color: #27ae60;
+  color: white;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.tabla-insumos td {
+  padding: 0.8rem;
+  border-bottom: 1px solid #ecf0f1;
+  vertical-align: middle;
+}
+
+.tabla-insumos tr:hover {
+  background-color: #f8f9fa;
+}
+
+.nombre-insumo {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.cantidad-unitaria,
+.cantidad-total {
+  text-align: center;
+  font-weight: 600;
+  color: #27ae60;
+}
+
+.unidad-medida {
+  text-align: center;
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+.sin-insumos {
+  text-align: center;
+  color: #7f8c8d;
+  font-style: italic;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .app {

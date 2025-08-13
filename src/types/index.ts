@@ -2,6 +2,14 @@ export interface Producto {
   codigo: string
   nombre: string
   valorUnitario: number
+  insumos: Insumo[]
+}
+
+export interface Insumo {
+  id: string
+  nombre: string
+  cantidadPorUnidad: number
+  unidadMedida: string
 }
 
 export interface ItemCotizacion {
@@ -12,4 +20,9 @@ export interface ItemCotizacion {
   valorUnitario: number
   descuento: number
   valorTotal: number
+}
+
+export interface InsumoCalculado {
+  insumo: Insumo
+  cantidadTotal: number
 }

@@ -2,7 +2,7 @@ import './App.css'
 import { useState } from 'react'
 import type { ItemCotizacion } from './types'
 import { productos } from './data/productos'
-import { calcularValorTotal, calcularTotalCotizacion, formatearMoneda } from './utils/calculation'
+import { calcularValorTotal, calcularTotalCotizacion, formatearMoneda, calcularInsumosRequeridos } from './utils/calculation'
 
 function App() {
   const [items, setItems] = useState<ItemCotizacion[]>([
@@ -67,6 +67,8 @@ function App() {
     }
   }
 
+  const insumosRequeridos = calcularInsumosRequeridos(items, productos)
+
   return (
     <div className="app">
       <h1>UniMarker - Sistema de Cotizaciones</h1>
@@ -115,10 +117,11 @@ function App() {
                   <td>
                     <input
                       type="number"
-                      value={item.cantidad}
+                      value={item.cantidad === 0 ? '' : item.cantidad}
                       onChange={(e) => actualizarItem(item.id, 'cantidad', parseInt(e.target.value) || 0)}
                       className="input-cantidad"
                       min="0"
+                      placeholder="0"
                     />
                   </td>
                   <td>
@@ -132,11 +135,12 @@ function App() {
                   <td>
                     <input
                       type="number"
-                      value={item.descuento}
+                      value={item.descuento === 0 ? '' : item.descuento}
                       onChange={(e) => actualizarItem(item.id, 'descuento', parseFloat(e.target.value) || 0)}
                       className="input-descuento"
                       min="0"
                       max="100"
+                      placeholder="0"
                     />
                   </td>
                   <td className="valor-total">
@@ -168,6 +172,38 @@ function App() {
             <h3>Total Cotización: {formatearMoneda(calcularTotalCotizacion(items))}</h3>
           </div>
         </div>
+      </div>
+
+      {/* Tabla de Insumos Requeridos */}
+      <div className="cotizacion-container">
+        <h2>Insumos Requeridos para Confección</h2>
+        
+        {insumosRequeridos.length > 0 ? (
+          <div className="tabla-container">
+            <table className="tabla-insumos">
+              <thead>
+                <tr>
+                  <th>Insumo</th>
+                  <th>Cantidad por Unidad</th>
+                  <th>Cantidad Total Requerida</th>
+                  <th>Unidad de Medida</th>
+                </tr>
+              </thead>
+              <tbody>
+                {insumosRequeridos.map((insumoCalculado, index) => (
+                  <tr key={index}>
+                    <td className="nombre-insumo">{insumoCalculado.insumo.nombre}</td>
+                    <td className="cantidad-unitaria">{insumoCalculado.insumo.cantidadPorUnidad}</td>
+                    <td className="cantidad-total">{insumoCalculado.cantidadTotal}</td>
+                    <td className="unidad-medida">{insumoCalculado.insumo.unidadMedida}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          <p className="sin-insumos">Selecciona productos para ver los insumos requeridos</p>
+        )}
       </div>
     </div>
   )

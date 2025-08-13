@@ -2,8 +2,7 @@ import type { ItemCotizacion, InsumoCalculado, Insumo, Producto } from '../types
 
 export const calcularValorTotal = (cantidad: number, valorUnitario: number, descuento: number): number => {
   const subtotal = cantidad * valorUnitario
-  const valorDescuento = (subtotal * descuento) / 100
-  return subtotal - valorDescuento
+  return subtotal - descuento
 }
 
 export const calcularTotalCotizacion = (items: ItemCotizacion[]): number => {
@@ -44,4 +43,22 @@ export const calcularInsumosRequeridos = (items: ItemCotizacion[], productos: Pr
   })
 
   return Array.from(insumosMap.values())
+}
+
+export const obtenerInsumosPorProducto = (items: ItemCotizacion[], productos: Producto[]) => {
+  return items.map(item => {
+    if (item.nombre && item.cantidad > 0) {
+      const producto = productos.find(p => p.nombre === item.nombre)
+      if (producto && producto.insumos) {
+        return {
+          item,
+          insumos: producto.insumos.map(insumo => ({
+            insumo,
+            cantidadTotal: insumo.cantidadPorUnidad * item.cantidad
+          }))
+        }
+      }
+    }
+    return null
+  }).filter(Boolean)
 }

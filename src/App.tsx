@@ -2,7 +2,8 @@ import './App.css'
 import { useState } from 'react'
 import type { ItemCotizacion } from './types'
 import { productos } from './data/productos'
-import { calcularValorTotal, calcularTotalCotizacion, formatearMoneda, calcularInsumosRequeridos } from './utils/calculation'
+import { calcularValorTotal, calcularTotalCotizacion, formatearMoneda, calcularInsumosRequeridos, obtenerInsumosPorProducto } from './utils/calculation'
+import { generarPDFCotizacion } from './utils/pdfGenerator'
 
 function App() {
   const [items, setItems] = useState<ItemCotizacion[]>([
@@ -68,6 +69,23 @@ function App() {
   }
 
   const insumosRequeridos = calcularInsumosRequeridos(items, productos)
+  const insumosPorProducto = obtenerInsumosPorProducto(items, productos)
+
+  const descargarPDF = () => {
+    const itemsConDatos = items.filter(item => item.nombre && item.cantidad > 0)
+    
+    if (itemsConDatos.length === 0) {
+      alert('Por favor, agregue al menos un producto con cantidad antes de generar el PDF')
+      return
+    }
+
+    generarPDFCotizacion(
+      items,
+      insumosPorProducto.filter((item): item is NonNullable<typeof item> => item !== null),
+      insumosRequeridos,
+      calcularTotalCotizacion(items)
+    )
+  }
 
   return (
     <div className="app">
@@ -84,7 +102,7 @@ function App() {
                 <th>Producto</th>
                 <th>Cantidad</th>
                 <th>Valor Unitario</th>
-                <th>Descuento (%)</th>
+                <th>Descuento ($)</th>
                 <th>Valor Total</th>
                 <th>Acciones</th>
               </tr>
@@ -139,7 +157,6 @@ function App() {
                       onChange={(e) => actualizarItem(item.id, 'descuento', parseFloat(e.target.value) || 0)}
                       className="input-descuento"
                       min="0"
-                      max="100"
                       placeholder="0"
                     />
                   </td>
@@ -165,6 +182,9 @@ function App() {
           <button onClick={agregarItem} className="btn-agregar">
             + Agregar Producto
           </button>
+          <button onClick={descargarPDF} className="btn-pdf">
+            📄 Descargar PDF
+          </button>
         </div>
         
         <div className="resumen">
@@ -174,9 +194,48 @@ function App() {
         </div>
       </div>
 
-      {/* Tabla de Insumos Requeridos */}
+      {/* Insumos por Producto - Vista Detallada */}
       <div className="cotizacion-container">
-        <h2>Insumos Requeridos para Confección</h2>
+        <h2>Insumos por Producto (Vista Detallada)</h2>
+        
+        {insumosPorProducto.length > 0 ? (
+          <div className="insumos-detallados">
+            {insumosPorProducto.map((productoDatos, index) => (
+              <div key={index} className="producto-insumos">
+                <h3 className="producto-titulo">
+                  {productoDatos?.item.nombre} - Cantidad: {productoDatos?.item.cantidad}
+                </h3>
+                <table className="tabla-insumos-detalle">
+                  <thead>
+                    <tr>
+                      <th>Insumo</th>
+                      <th>Cantidad por Unidad</th>
+                      <th>Cantidad Total</th>
+                      <th>Unidad de Medida</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {productoDatos?.insumos.map((insumoData, insumoIndex) => (
+                      <tr key={insumoIndex}>
+                        <td className="nombre-insumo">{insumoData.insumo.nombre}</td>
+                        <td className="cantidad-unitaria">{insumoData.insumo.cantidadPorUnidad}</td>
+                        <td className="cantidad-total">{insumoData.cantidadTotal}</td>
+                        <td className="unidad-medida">{insumoData.insumo.unidadMedida}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="sin-insumos">Selecciona productos para ver el detalle de insumos</p>
+        )}
+      </div>
+
+      {/* Tabla de Insumos Requeridos - Resumen General */}
+      <div className="cotizacion-container">
+        <h2>Resumen General de Insumos</h2>
         
         {insumosRequeridos.length > 0 ? (
           <div className="tabla-container">

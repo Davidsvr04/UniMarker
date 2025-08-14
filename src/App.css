@@ -344,3 +344,82 @@
     font-size: 0.8rem;
   }
 }
+
+/* Estilos para el formulario de datos del proveedor */
+.datos-proveedor {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  margin-bottom: 20px;
+}
+
+.fila-datos {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  align-items: end;
+}
+
+.campo-grupo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.campo-largo {
+  flex: 2;
+}
+
+.campo-grupo label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #495057;
+  font-size: 0.9rem;
+}
+
+.campo-grupo input {
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.campo-grupo input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.campo-grupo input::placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+
+/* Responsive para formulario de datos */
+@media (max-width: 768px) {
+  .fila-datos {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .campo-largo {
+    flex: 1;
+  }
+  
+  .datos-proveedor {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .fila-datos {
+    flex-wrap: wrap;
+  }
+  
+  .campo-grupo {
+    min-width: 200px;
+  }
+}

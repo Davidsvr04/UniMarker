@@ -1,7 +1,7 @@
 import jsPDF from 'jspdf'
 import autoTable from 'jspdf-autotable'
 import type { ItemCotizacion, InsumoCalculado } from '../types'
-import { formatearMoneda } from './calculation'
+import { formatearMoneda, generarNombreCompleto } from './calculation'
 
 interface ProductoInsumos {
   item: ItemCotizacion
@@ -77,16 +77,17 @@ export const generarPDFCotizacion = (
     .filter(item => item.nombre && item.cantidad > 0)
     .map(item => [
       item.codigo,
-      item.nombre,
+      generarNombreCompleto(item.nombre, item.talla, item.color),
       item.cantidad.toString(),
       formatearMoneda(item.valorUnitario),
       formatearMoneda(item.descuento),
-      formatearMoneda(item.valorTotal)
+      formatearMoneda(item.valorTotal),
+      item.observaciones || '-'
     ])
 
   autoTable(doc, {
     startY: yPosition,
-    head: [['Código', 'Producto', 'Cantidad', 'Valor Unitario', 'Descuento', 'Valor Total']],
+    head: [['Código', 'Producto', 'Cantidad', 'Valor Unitario', 'Descuento', 'Valor Total', 'Observaciones']],
     body: datosTabla,
     theme: 'grid',
     headStyles: {
@@ -100,12 +101,13 @@ export const generarPDFCotizacion = (
       cellPadding: 3
     },
     columnStyles: {
-      0: { cellWidth: 25 },
-      1: { cellWidth: 65 },
-      2: { cellWidth: 20, halign: 'center' },
-      3: { cellWidth: 25, halign: 'right' },
-      4: { cellWidth: 25, halign: 'right' },
-      5: { cellWidth: 25, halign: 'right' }
+      0: { cellWidth: 20 },
+      1: { cellWidth: 50 },
+      2: { cellWidth: 15, halign: 'center' },
+      3: { cellWidth: 20, halign: 'right' },
+      4: { cellWidth: 20, halign: 'right' },
+      5: { cellWidth: 20, halign: 'right' },
+      6: { cellWidth: 25 }
     },
     margin: { left: 20, right: 20 }
   })
@@ -145,7 +147,7 @@ export const generarPDFCotizacion = (
       doc.setFontSize(12)
       doc.setFont('helvetica', 'bold')
       doc.setTextColor(231, 76, 60)
-      doc.text(`${productoDatos.item.nombre} - Cantidad: ${productoDatos.item.cantidad}`, 20, yPosition)
+      doc.text(`${generarNombreCompleto(productoDatos.item.nombre, productoDatos.item.talla, productoDatos.item.color)} - Cantidad: ${productoDatos.item.cantidad}`, 20, yPosition)
       
       yPosition += 8
 

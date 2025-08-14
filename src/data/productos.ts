@@ -2,8 +2,8 @@ import type { Producto } from '../types'
 
 export const productos: Producto[] = [
   { 
-    codigo: 'Q11003', 
-    nombre: 'CUELLO V DAMA BLANCO M (ITAGUI URG)', 
+    codigo: '01', 
+    nombre: 'CUELLO V DAMA DOBLE SESGO', 
     valorUnitario: 8500,
     insumos: [
       { id: '1', nombre: 'Cierre', cantidadPorUnidad: 2, unidadMedida: 'unidades' },
@@ -12,8 +12,8 @@ export const productos: Producto[] = [
     ]
   },
   { 
-    codigo: 'Q11006', 
-    nombre: 'CUELLO V DAMA BLANCO XXL (PEDIDO)', 
+    codigo: '011', 
+    nombre: 'CUELLO V DAMA SESGO SIMPLE', 
     valorUnitario: 11000,
     insumos: [
       { id: '1', nombre: 'Cierre', cantidadPorUnidad: 2, unidadMedida: 'unidades' },
@@ -22,8 +22,8 @@ export const productos: Producto[] = [
     ]
   },
   { 
-    codigo: 'Q11007', 
-    nombre: 'CUELLO V DAMA BLANCO XXXL (ITAGUI URG)', 
+    codigo: '02', 
+    nombre: 'CUELLO RUTH DAMA', 
     valorUnitario: 8500,
     insumos: [
       { id: '1', nombre: 'Cierre', cantidadPorUnidad: 2, unidadMedida: 'unidades' },
@@ -32,8 +32,8 @@ export const productos: Producto[] = [
     ]
   },
   { 
-    codigo: 'P13203', 
-    nombre: 'CUELLO V DAMA VERDE MILITAR M (ITAGUI URG)', 
+    codigo: '03', 
+    nombre: 'CUELLO NERU DAMA', 
     valorUnitario: 8500,
     insumos: [
       { id: '1', nombre: 'Cierre', cantidadPorUnidad: 2, unidadMedida: 'unidades' },
@@ -42,7 +42,7 @@ export const productos: Producto[] = [
     ]
   },
   { 
-    codigo: 'Q21003', 
+    codigo: '04', 
     nombre: 'CUELLO V CABALLERO BLANCO M (ITAGUI URG)', 
     valorUnitario: 8500,
     insumos: [

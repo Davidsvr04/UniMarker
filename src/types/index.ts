@@ -5,6 +5,16 @@ export interface Producto {
   insumos: Insumo[]
 }
 
+export interface Talla {
+  codigo: string
+  nombre: string
+}
+
+export interface Color {
+  codigo: string
+  nombre: string
+}
+
 export interface Insumo {
   id: string
   nombre: string
@@ -16,6 +26,9 @@ export interface ItemCotizacion {
   id: string
   codigo: string
   nombre: string
+  talla: string
+  color: string
+  observaciones: string
   cantidad: number
   valorUnitario: number
   descuento: number

@@ -78,6 +78,34 @@
   color: black;
 }
 
+.select-talla {
+  width: 100px;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  background-color: white;
+  color: black;
+}
+
+.select-color {
+  width: 120px;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  background-color: white;
+  color: black;
+}
+
+.input-observaciones {
+  width: 150px;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
 .input-cantidad {
   width: 80px;
   padding: 0.5rem;

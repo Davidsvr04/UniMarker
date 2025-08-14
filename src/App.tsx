@@ -2,7 +2,9 @@ import './App.css'
 import { useState } from 'react'
 import type { ItemCotizacion } from './types'
 import { productos } from './data/productos'
-import { calcularValorTotal, calcularTotalCotizacion, formatearMoneda, calcularInsumosRequeridos, obtenerInsumosPorProducto } from './utils/calculation'
+import { tallas } from './data/tallas'
+import { colores } from './data/colores'
+import { calcularValorTotal, calcularTotalCotizacion, formatearMoneda, calcularInsumosRequeridos, obtenerInsumosPorProducto, generarCodigoCompleto, generarNombreCompleto } from './utils/calculation'
 import { generarPDFCotizacion } from './utils/pdfGenerator'
 
 function App() {
@@ -11,6 +13,9 @@ function App() {
       id: '1',
       codigo: '',
       nombre: '',
+      talla: '',
+      color: '',
+      observaciones: '',
       cantidad: 0,
       valorUnitario: 0,
       descuento: 0,
@@ -24,12 +29,43 @@ function App() {
         if (item.id === id) {
           const itemActualizado = { ...item, [campo]: valor }
           
-          // Si se selecciona un producto, auto-llenar código y valor unitario
+          // Si se selecciona un producto, auto-llenar código base y valor unitario
           if (campo === 'nombre') {
             const producto = productos.find(p => p.nombre === valor)
             if (producto) {
-              itemActualizado.codigo = producto.codigo
               itemActualizado.valorUnitario = producto.valorUnitario
+              // Solo actualizar código si hay producto, talla y color
+              if (item.talla && item.color) {
+                const tallaObj = tallas.find(t => t.nombre === item.talla)
+                const colorObj = colores.find(c => c.nombre === item.color)
+                if (tallaObj && colorObj) {
+                  itemActualizado.codigo = generarCodigoCompleto(producto.codigo, tallaObj.codigo, colorObj.codigo)
+                }
+              }
+            }
+          }
+          
+          // Si se selecciona talla, actualizar código si hay producto y color
+          if (campo === 'talla') {
+            const tallaObj = tallas.find(t => t.nombre === valor)
+            if (tallaObj && item.nombre && item.color) {
+              const producto = productos.find(p => p.nombre === item.nombre)
+              const colorObj = colores.find(c => c.nombre === item.color)
+              if (producto && colorObj) {
+                itemActualizado.codigo = generarCodigoCompleto(producto.codigo, tallaObj.codigo, colorObj.codigo)
+              }
+            }
+          }
+          
+          // Si se selecciona color, actualizar código si hay producto y talla
+          if (campo === 'color') {
+            const colorObj = colores.find(c => c.nombre === valor)
+            if (colorObj && item.nombre && item.talla) {
+              const producto = productos.find(p => p.nombre === item.nombre)
+              const tallaObj = tallas.find(t => t.nombre === item.talla)
+              if (producto && tallaObj) {
+                itemActualizado.codigo = generarCodigoCompleto(producto.codigo, tallaObj.codigo, colorObj.codigo)
+              }
             }
           }
           
@@ -54,6 +90,9 @@ function App() {
       id: Date.now().toString(),
       codigo: '',
       nombre: '',
+      talla: '',
+      color: '',
+      observaciones: '',
       cantidad: 0,
       valorUnitario: 0,
       descuento: 0,
@@ -100,6 +139,9 @@ function App() {
               <tr>
                 <th>Código</th>
                 <th>Producto</th>
+                <th>Talla</th>
+                <th>Color</th>
+                <th>Observaciones</th>
                 <th>Cantidad</th>
                 <th>Valor Unitario</th>
                 <th>Descuento ($)</th>
@@ -131,6 +173,43 @@ function App() {
                         </option>
                       ))}
                     </select>
+                  </td>
+                  <td>
+                    <select
+                      value={item.talla}
+                      onChange={(e) => actualizarItem(item.id, 'talla', e.target.value)}
+                      className="select-talla"
+                    >
+                      <option value="">Seleccionar talla...</option>
+                      {tallas.map((talla) => (
+                        <option key={talla.codigo} value={talla.nombre}>
+                          {talla.nombre}
+                        </option>
+                      ))}
+                    </select>
+                  </td>
+                  <td>
+                    <select
+                      value={item.color}
+                      onChange={(e) => actualizarItem(item.id, 'color', e.target.value)}
+                      className="select-color"
+                    >
+                      <option value="">Seleccionar color...</option>
+                      {colores.map((color) => (
+                        <option key={color.codigo} value={color.nombre}>
+                          {color.nombre}
+                        </option>
+                      ))}
+                    </select>
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      value={item.observaciones}
+                      onChange={(e) => actualizarItem(item.id, 'observaciones', e.target.value)}
+                      className="input-observaciones"
+                      placeholder="Observaciones..."
+                    />
                   </td>
                   <td>
                     <input
@@ -203,7 +282,7 @@ function App() {
             {insumosPorProducto.map((productoDatos, index) => (
               <div key={index} className="producto-insumos">
                 <h3 className="producto-titulo">
-                  {productoDatos?.item.nombre} - Cantidad: {productoDatos?.item.cantidad}
+                  {generarNombreCompleto(productoDatos?.item.nombre || '', productoDatos?.item.talla || '', productoDatos?.item.color || '')} - Cantidad: {productoDatos?.item.cantidad}
                 </h3>
                 <table className="tabla-insumos-detalle">
                   <thead>

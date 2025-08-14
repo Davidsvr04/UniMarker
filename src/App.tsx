@@ -1,6 +1,6 @@
 import './App.css'
 import { useState } from 'react'
-import type { ItemCotizacion } from './types'
+import type { ItemCotizacion, DatosProveedor } from './types'
 import { productos } from './data/productos'
 import { tallas } from './data/tallas'
 import { colores } from './data/colores'
@@ -22,6 +22,29 @@ function App() {
       valorTotal: 0
     }
   ])
+
+  const [datosProveedor, setDatosProveedor] = useState<DatosProveedor>({
+    numeroOrden: '',
+    fechaOrden: new Date().toISOString().split('T')[0], // Fecha actual por defecto
+    nombre: '',
+    cedula: '',
+    direccion: '',
+    telefono: '',
+    ciudad: '',
+    pais: 'Colombia',
+    referencia: '',
+    valor: '',
+    fechaInicio: '',
+    plazoEntrega: '',
+    fechaMaxEntrega: ''
+  })
+
+  const actualizarDatosProveedor = (campo: keyof DatosProveedor, valor: string) => {
+    setDatosProveedor(prev => ({
+      ...prev,
+      [campo]: valor
+    }))
+  }
 
   const actualizarItem = (id: string, campo: keyof ItemCotizacion, valor: string | number) => {
     setItems(prevItems => 
@@ -110,7 +133,7 @@ function App() {
   const insumosRequeridos = calcularInsumosRequeridos(items, productos)
   const insumosPorProducto = obtenerInsumosPorProducto(items, productos)
 
-  const descargarPDF = () => {
+  const descargarPDF = async () => {
     const itemsConDatos = items.filter(item => item.nombre && item.cantidad > 0)
     
     if (itemsConDatos.length === 0) {
@@ -118,17 +141,162 @@ function App() {
       return
     }
 
-    generarPDFCotizacion(
-      items,
-      insumosPorProducto.filter((item): item is NonNullable<typeof item> => item !== null),
-      insumosRequeridos,
-      calcularTotalCotizacion(items)
-    )
+    // Validar datos básicos del proveedor
+    if (!datosProveedor.nombre || !datosProveedor.numeroOrden) {
+      alert('Por favor, complete al menos el número de orden y el nombre del confeccionista')
+      return
+    }
+
+    try {
+      const nombreArchivo = await generarPDFCotizacion(itemsConDatos, datosProveedor)
+      alert(`PDF generado exitosamente: ${nombreArchivo}`)
+    } catch (error) {
+      console.error('Error al generar PDF:', error)
+      alert('Error al generar el PDF. Por favor, inténtelo de nuevo.')
+    }
   }
 
   return (
     <div className="app">
-      <h1>UniMarker - Sistema de Cotizaciones</h1>
+      <h1>Uniformes Moda - Sistema de Cotizaciones</h1>
+      
+      {/* Formulario de Datos del Proveedor/Cliente */}
+      <div className="cotizacion-container">
+        <h2>Datos de la Orden</h2>
+        
+        <div className="datos-proveedor">
+          <div className="fila-datos">
+            <div className="campo-grupo">
+              <label htmlFor="numeroOrden">Número de Orden:</label>
+              <input
+                id="numeroOrden"
+                type="text"
+                value={datosProveedor.numeroOrden}
+                onChange={(e) => actualizarDatosProveedor('numeroOrden', e.target.value)}
+                placeholder="Ej: ORD-2024-001"
+              />
+            </div>
+            <div className="campo-grupo">
+              <label htmlFor="referencia">Referencia:</label>
+              <input
+                id="referencia"
+                type="text"
+                value={datosProveedor.referencia}
+                onChange={(e) => actualizarDatosProveedor('referencia', e.target.value)}
+                placeholder="Referencia del proyecto"
+              />
+            </div>
+          </div>
+
+          <div className="fila-datos">
+            <div className="campo-grupo">
+              <label htmlFor="nombre">Nombre Confeccionista:</label>
+              <input
+                id="nombre"
+                type="text"
+                value={datosProveedor.nombre}
+                onChange={(e) => actualizarDatosProveedor('nombre', e.target.value)}
+                placeholder="Nombre del cliente o empresa"
+              />
+            </div>
+            <div className="campo-grupo">
+              <label htmlFor="cedula">Cédula/NIT:</label>
+              <input
+                id="cedula"
+                type="text"
+                value={datosProveedor.cedula}
+                onChange={(e) => actualizarDatosProveedor('cedula', e.target.value)}
+                placeholder="Número de identificación"
+              />
+            </div>
+            <div className="campo-grupo">
+              <label htmlFor="telefono">Teléfono:</label>
+              <input
+                id="telefono"
+                type="tel"
+                value={datosProveedor.telefono}
+                onChange={(e) => actualizarDatosProveedor('telefono', e.target.value)}
+                placeholder="Número de contacto"
+              />
+            </div>
+          </div>
+
+          <div className="fila-datos">
+            <div className="campo-grupo campo-largo">
+              <label htmlFor="direccion">Dirección:</label>
+              <input
+                id="direccion"
+                type="text"
+                value={datosProveedor.direccion}
+                onChange={(e) => actualizarDatosProveedor('direccion', e.target.value)}
+                placeholder="Dirección completa"
+              />
+            </div>
+            <div className="campo-grupo">
+              <label htmlFor="ciudad">Ciudad:</label>
+              <input
+                id="ciudad"
+                type="text"
+                value={datosProveedor.ciudad}
+                onChange={(e) => actualizarDatosProveedor('ciudad', e.target.value)}
+                placeholder="Ciudad"
+              />
+            </div>
+            <div className="campo-grupo">
+              <label htmlFor="pais">País:</label>
+              <input
+                id="pais"
+                type="text"
+                value={datosProveedor.pais}
+                onChange={(e) => actualizarDatosProveedor('pais', e.target.value)}
+                placeholder="País"
+              />
+            </div>
+          </div>
+
+          <div className="fila-datos">
+            <div className="campo-grupo">
+              <label htmlFor="valor">Valor:</label>
+              <input
+                id="valor"
+                type="text"
+                value={datosProveedor.valor}
+                onChange={(e) => actualizarDatosProveedor('valor', e.target.value)}
+                placeholder="Valor acordado"
+              />
+            </div>
+            <div className="campo-grupo">
+              <label htmlFor="fechaInicio">Fecha de Inicio:</label>
+              <input
+                id="fechaInicio"
+                type="date"
+                value={datosProveedor.fechaInicio}
+                onChange={(e) => actualizarDatosProveedor('fechaInicio', e.target.value)}
+              />
+            </div>
+            <div className="campo-grupo">
+              <label htmlFor="plazoEntrega">Plazo de Entrega (días):</label>
+              <input
+                id="plazoEntrega"
+                type="number"
+                value={datosProveedor.plazoEntrega}
+                onChange={(e) => actualizarDatosProveedor('plazoEntrega', e.target.value)}
+                placeholder="Días"
+                min="1"
+              />
+            </div>
+            <div className="campo-grupo">
+              <label htmlFor="fechaMaxEntrega">Fecha Máx. Entrega:</label>
+              <input
+                id="fechaMaxEntrega"
+                type="date"
+                value={datosProveedor.fechaMaxEntrega}
+                onChange={(e) => actualizarDatosProveedor('fechaMaxEntrega', e.target.value)}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
       
       <div className="cotizacion-container">
         <h2>Nueva Cotización</h2>

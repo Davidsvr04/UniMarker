@@ -22,6 +22,22 @@ export interface Insumo {
   unidadMedida: string
 }
 
+export interface DatosProveedor {
+  numeroOrden: string
+  fechaOrden: string
+  nombre: string
+  cedula: string
+  direccion: string
+  telefono: string
+  ciudad: string
+  pais: string
+  referencia: string
+  valor: string
+  fechaInicio: string
+  plazoEntrega: string
+  fechaMaxEntrega: string
+}
+
 export interface ItemCotizacion {
   id: string
   codigo: string

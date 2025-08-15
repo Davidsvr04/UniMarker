@@ -25,6 +25,14 @@ export const calcularTotalCotizacion = (items: ItemCotizacion[]): number => {
   return redondearNumero(total)
 }
 
+export const calcularTotalesCotizacion = (items: ItemCotizacion[]) => {
+  const total = items.reduce((total, item) => total + item.valorTotal, 0)
+  
+  return {
+    total
+  }
+}
+
 export const formatearMoneda = (valor: number): string => {
   return new Intl.NumberFormat('es-CO', {
     style: 'currency',

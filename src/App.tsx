@@ -4,8 +4,9 @@ import type { ItemCotizacion, DatosProveedor } from './types'
 import { productos } from './data/productos'
 import { tallas } from './data/tallas'
 import { colores } from './data/colores'
-import { calcularValorTotal, calcularTotalCotizacion, formatearMoneda, calcularInsumosRequeridos, obtenerInsumosPorProducto, generarCodigoCompleto, generarNombreCompleto } from './utils/calculation'
+import { calcularValorTotal, calcularTotalCotizacion, calcularTotalesCotizacion, formatearMoneda, calcularInsumosRequeridos, obtenerInsumosPorProducto, generarCodigoCompleto, generarNombreCompleto } from './utils/calculation'
 import { generarPDFCotizacion } from './utils/pdfGenerator'
+import { generateExcel } from './utils/excelGenerator'
 
 function App() {
   const [items, setItems] = useState<ItemCotizacion[]>([
@@ -153,6 +154,33 @@ function App() {
     } catch (error) {
       console.error('Error al generar PDF:', error)
       alert('Error al generar el PDF. Por favor, inténtelo de nuevo.')
+    }
+  }
+
+  const descargarExcel = () => {
+    // Filtrar items con datos válidos
+    const itemsConDatos = items.filter(item => 
+      item.codigo && item.cantidad > 0
+    )
+
+    if (itemsConDatos.length === 0) {
+      alert('Por favor, agregue al menos un producto con cantidad antes de generar el Excel')
+      return
+    }
+
+    // Validar datos básicos del proveedor
+    if (!datosProveedor.nombre || !datosProveedor.numeroOrden) {
+      alert('Por favor, complete al menos el número de orden y el nombre del confeccionista')
+      return
+    }
+
+    try {
+      const { total } = calcularTotalesCotizacion(itemsConDatos)
+      generateExcel(itemsConDatos, datosProveedor, total)
+      alert('Excel generado y descargado exitosamente')
+    } catch (error) {
+      console.error('Error al generar Excel:', error)
+      alert('Error al generar el Excel. Por favor, inténtelo de nuevo.')
     }
   }
 
@@ -431,6 +459,9 @@ function App() {
           </button>
           <button onClick={descargarPDF} className="btn-pdf">
             📄 Descargar PDF
+          </button>
+          <button onClick={descargarExcel} className="btn-excel">
+            📊 Descargar Excel
           </button>
         </div>
         

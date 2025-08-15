@@ -4,20 +4,17 @@ import type { ItemCotizacion, DatosProveedor } from '../types'
 import { formatearMoneda, calcularTotalCotizacion, calcularInsumosRequeridos, obtenerInsumosPorProducto, generarNombreCompleto } from './calculation'
 import { productos } from '../data/productos'
 
-// Extender la interfaz de jsPDF para incluir propiedades de autoTable
 interface ExtendedJsPDF extends jsPDF {
   lastAutoTable?: {
     finalY: number
   }
 }
 
-// Función auxiliar para obtener el número de páginas
 const obtenerNumeroPaginas = (doc: jsPDF): number => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return (doc as any).getNumberOfPages() as number
 }
 
-// Función para convertir imagen a base64 (para el logo)
 const convertirImagenABase64 = async (url: string): Promise<string> => {
   try {
     const response = await fetch(url)
@@ -38,7 +35,6 @@ export const generarPDFCotizacion = async (
   items: ItemCotizacion[], 
   datosProveedor: DatosProveedor
 ) => {
-  // Filtrar items válidos
   const itemsValidos = items.filter(item => item.nombre && item.cantidad > 0)
   
   if (itemsValidos.length === 0) {
@@ -48,11 +44,9 @@ export const generarPDFCotizacion = async (
   const doc = new jsPDF() as ExtendedJsPDF
   let yPosition = 20
 
-  // Configurar fuentes
   doc.setFont('helvetica', 'normal')
 
   try {
-    // Intentar cargar el logo
     const logoBase64 = await convertirImagenABase64('./UM-Logo.png')
     if (logoBase64) {
       doc.addImage(logoBase64, 'PNG', 15, 10, 40, 20)
@@ -61,7 +55,6 @@ export const generarPDFCotizacion = async (
     console.warn('No se pudo cargar el logo:', error)
   }
 
-  // Encabezado principal
   doc.setFontSize(18)
   doc.setFont('helvetica', 'bold')
   doc.text('UNIFORMES MODA', 105, 20, { align: 'center' })
@@ -71,7 +64,6 @@ export const generarPDFCotizacion = async (
   
   yPosition = 45
 
-  // Datos de la orden
   doc.setFontSize(12)
   doc.setFont('helvetica', 'bold')
   doc.text('DATOS DE LA ORDEN', 15, yPosition)
@@ -80,7 +72,6 @@ export const generarPDFCotizacion = async (
   doc.setFont('helvetica', 'normal')
   doc.setFontSize(10)
 
-  // Primera fila de datos
   const primeraFila = [
     `No. Orden: ${datosProveedor.numeroOrden}`,
     `Fecha: ${datosProveedor.fechaOrden}`,
@@ -92,25 +83,21 @@ export const generarPDFCotizacion = async (
   })
   yPosition += 8
 
-  // Segunda fila de datos
   doc.text(`Confeccionista: ${datosProveedor.nombre}`, 15, yPosition)
   doc.text(`Cédula/NIT: ${datosProveedor.cedula}`, 15, yPosition + 6)
   doc.text(`Teléfono: ${datosProveedor.telefono}`, 15, yPosition + 12)
   
-  // Dirección y ubicación
   doc.text(`Dirección: ${datosProveedor.direccion}`, 15, yPosition + 18)
   doc.text(`Ciudad: ${datosProveedor.ciudad}, ${datosProveedor.pais}`, 15, yPosition + 24)
   
   yPosition += 35
 
-  // Fechas y plazos
   doc.text(`Fecha Inicio: ${datosProveedor.fechaInicio}`, 15, yPosition + 6)
   doc.text(`Plazo Entrega: ${datosProveedor.plazoEntrega} días`, 15, yPosition + 12)
   doc.text(`Fecha Máx. Entrega: ${datosProveedor.fechaMaxEntrega}`, 15, yPosition + 18)
   
   yPosition += 30
 
-  // Tabla de cotización
   doc.setFontSize(12)
   doc.setFont('helvetica', 'bold')
   doc.text('PRODUCTOS SOLICITADOS', 15, yPosition)
@@ -141,18 +128,17 @@ export const generarPDFCotizacion = async (
       fontSize: 8
     },
     columnStyles: {
-      0: { cellWidth: 25 }, // Código
-      1: { cellWidth: 45 }, // Producto
-      2: { cellWidth: 35 }, // Observaciones
-      3: { cellWidth: 15, halign: 'center' }, // Cantidad
-      4: { cellWidth: 25, halign: 'right' }, // Valor Unit.
-      5: { cellWidth: 25, halign: 'right' }, // Descuento
-      6: { cellWidth: 25, halign: 'right' } // Total
+      0: { cellWidth: 25 }, 
+      1: { cellWidth: 45 }, 
+      2: { cellWidth: 35 }, 
+      3: { cellWidth: 15, halign: 'center' }, 
+      4: { cellWidth: 25, halign: 'right' }, 
+      5: { cellWidth: 25, halign: 'right' }, 
+      6: { cellWidth: 25, halign: 'right' } 
     },
     margin: { left: 15, right: 15 }
   })
 
-  // Total de la cotización
   yPosition = doc.lastAutoTable?.finalY ? doc.lastAutoTable.finalY + 10 : yPosition + 10
   doc.setFontSize(12)
   doc.setFont('helvetica', 'bold')
@@ -160,13 +146,11 @@ export const generarPDFCotizacion = async (
   
   yPosition += 20
 
-  // Verificar si necesitamos una nueva página
   if (yPosition > 250) {
     doc.addPage()
     yPosition = 20
   }
 
-  // Insumos por producto (detallado)
   doc.setFontSize(12)
   doc.setFont('helvetica', 'bold')
   doc.text('INSUMOS POR PRODUCTO', 15, yPosition)
@@ -175,10 +159,8 @@ export const generarPDFCotizacion = async (
   const insumosPorProducto = obtenerInsumosPorProducto(itemsValidos, productos)
   
   for (const productoDatos of insumosPorProducto) {
-    // Verificar que productoDatos no sea null
     if (!productoDatos) continue
     
-    // Verificar espacio disponible
     if (yPosition > 230) {
       doc.addPage()
       yPosition = 20
@@ -216,10 +198,10 @@ export const generarPDFCotizacion = async (
         fontSize: 8
       },
       columnStyles: {
-        0: { cellWidth: 70 }, // Insumo
-        1: { cellWidth: 30, halign: 'center' }, // Cant. por Unidad
-        2: { cellWidth: 30, halign: 'center' }, // Cant. Total
-        3: { cellWidth: 25, halign: 'center' } // Unidad
+        0: { cellWidth: 70 }, 
+        1: { cellWidth: 30, halign: 'center' }, 
+        2: { cellWidth: 30, halign: 'center' }, 
+        3: { cellWidth: 25, halign: 'center' } 
       },
       margin: { left: 20, right: 15 }
     })
@@ -227,13 +209,11 @@ export const generarPDFCotizacion = async (
     yPosition = doc.lastAutoTable?.finalY ? doc.lastAutoTable.finalY + 8 : yPosition + 8
   }
 
-  // Verificar si necesitamos una nueva página para el resumen
   if (yPosition > 200) {
     doc.addPage()
     yPosition = 20
   }
 
-  // Resumen general de insumos
   yPosition += 10
   doc.setFontSize(12)
   doc.setFont('helvetica', 'bold')
@@ -263,14 +243,13 @@ export const generarPDFCotizacion = async (
       fontSize: 8
     },
     columnStyles: {
-      0: { cellWidth: 90 }, // Insumo (más ancho)
-      1: { cellWidth: 50, halign: 'center' }, // Cant. Total
-      2: { cellWidth: 40, halign: 'center' } // Unidad
+      0: { cellWidth: 90 }, 
+      1: { cellWidth: 50, halign: 'center' }, 
+      2: { cellWidth: 40, halign: 'center' } 
     },
     margin: { left: 15, right: 15 }
   })
 
-  // Pie de página
   const totalPaginas = obtenerNumeroPaginas(doc)
   for (let i = 1; i <= totalPaginas; i++) {
     doc.setPage(i)
@@ -280,11 +259,19 @@ export const generarPDFCotizacion = async (
     doc.text(`Generado el ${new Date().toLocaleDateString('es-CO')}`, 195, 290, { align: 'right' })
   }
 
-  // Generar nombre del archivo
   const fechaActual = new Date().toISOString().split('T')[0]
-  const nombreArchivo = `Orden_${datosProveedor.numeroOrden || 'SN'}_${fechaActual}.pdf`
+  
+  const nombreLimpio = datosProveedor.nombre
+    .replace(/[^a-zA-Z0-9\s]/g, '')
+    .replace(/\s+/g, '_')
+    .substring(0, 20) 
+  
+  const numeroOrdenLimpio = datosProveedor.numeroOrden
+    .replace(/[^a-zA-Z0-9]/g, '')
+    .substring(0, 15) 
+  
+  const nombreArchivo = `${numeroOrdenLimpio || 'SN'}_${nombreLimpio || 'Confeccionista'}_${fechaActual}.pdf`
 
-  // Descargar el PDF
   doc.save(nombreArchivo)
   
   return nombreArchivo

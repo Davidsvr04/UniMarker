@@ -1,27 +1,65 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+}
+
 .app {
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
+  min-height: 100vh;
 }
 
 .app h1 {
-  color: #2c3e50;
+  color: #c13584;
   margin-bottom: 2rem;
   text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.5px;
 }
 
 .cotizacion-container {
   background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cotizacion-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 .cotizacion-container h2 {
-  color: #34495e;
+  color: #2c3e50;
   margin-bottom: 1.5rem;
-  border-bottom: 2px solid #3498db;
+  border-bottom: 3px solid transparent;
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
   padding-bottom: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  position: relative;
+}
+
+.cotizacion-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+  border-radius: 2px;
 }
 
 .tabla-container {
@@ -31,133 +69,238 @@
 
 .tabla-cotizacion {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   background: white;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
 }
 
 .tabla-cotizacion th {
-  background-color: #3498db;
+  background: linear-gradient(135deg, #c13584 0%, #8b1155 100%);
   color: white;
-  padding: 1rem;
+  padding: 1.2rem 1rem;
   text-align: left;
   font-weight: 600;
   font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+.tabla-cotizacion th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.tabla-cotizacion th:last-child {
+  border-top-right-radius: 12px;
 }
 
 .tabla-cotizacion td {
-  padding: 0.8rem;
-  border-bottom: 1px solid #ecf0f1;
+  padding: 1rem;
+  border-bottom: 1px solid #f1f3f4;
   vertical-align: middle;
+  transition: background-color 0.2s ease;
 }
 
 .tabla-cotizacion tr:hover {
-  background-color: #f8f9fa;
+  background-color: #f8fffe;
+  transform: scale(1.002);
+  transition: all 0.2s ease;
+}
+
+.tabla-cotizacion tr:last-child td:first-child {
+  border-bottom-left-radius: 12px;
+}
+
+.tabla-cotizacion tr:last-child td:last-child {
+  border-bottom-right-radius: 12px;
 }
 
 .input-codigo {
   width: 100px;
-  padding: 0.5rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  padding: 0.7rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
   background-color: white;
   font-size: 0.9rem;
-  color: black;
+  color: #495057;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.input-codigo:focus {
+  outline: none;
+  border-color: #c13584;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  transform: translateY(-1px);
 }
 
 .select-producto {
   width: 100%;
   min-width: 300px;
-  padding: 0.5rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  padding: 0.7rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
   font-size: 0.9rem;
   background-color: white;
-  color: black;
+  color: #495057;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.select-producto:focus {
+  outline: none;
+  border-color: #c13584;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
 .select-talla {
   width: 100px;
-  padding: 0.5rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  padding: 0.7rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
   font-size: 0.9rem;
   background-color: white;
-  color: black;
+  color: #495057;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.select-talla:focus {
+  outline: none;
+  border-color: #c13584;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
 .select-color {
   width: 120px;
-  padding: 0.5rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  padding: 0.7rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
   font-size: 0.9rem;
   background-color: white;
-  color: black;
+  color: #495057;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.select-color:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
 .input-observaciones {
   width: 150px;
-  padding: 0.5rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  padding: 0.7rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
   font-size: 0.9rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.input-observaciones:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
 .input-cantidad {
   width: 80px;
-  padding: 0.5rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  padding: 0.7rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
   text-align: center;
   font-size: 0.9rem;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  color: #2ecc71;
+}
+
+.input-cantidad:focus {
+  outline: none;
+  border-color: #2ecc71;
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.1);
 }
 
 .input-valor {
   width: 120px;
-  padding: 0.5rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  padding: 0.7rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
   text-align: right;
   font-size: 0.9rem;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  color: #3498db;
+}
+
+.input-valor:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
 }
 
 .input-descuento {
   width: 80px;
-  padding: 0.5rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  padding: 0.7rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
   text-align: center;
   font-size: 0.9rem;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  color: #e74c3c;
+}
+
+.input-descuento:focus {
+  outline: none;
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
 }
 
 .valor-total {
-  font-weight: bold;
-  color: #27ae60;
+  font-weight: 700;
+  color: #2ecc71;
   text-align: right;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .btn-eliminar {
-  background-color: #e74c3c;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
   color: white;
   border: none;
-  border-radius: 4px;
-  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
   cursor: pointer;
-  font-size: 0.9rem;
-  transition: background-color 0.3s;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
 }
 
 .btn-eliminar:hover:not(:disabled) {
-  background-color: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
 }
 
 .btn-eliminar:disabled {
-  background-color: #bdc3c7;
+  background: #bdc3c7;
   cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 .acciones {
@@ -165,64 +308,77 @@
   display: flex;
   gap: 1rem;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .btn-agregar {
-  background-color: #2ecc71;
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
   color: white;
   border: none;
-  border-radius: 4px;
-  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  padding: 1rem 2rem;
   cursor: pointer;
   font-size: 1rem;
-  font-weight: 500;
-  transition: background-color 0.3s;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .btn-agregar:hover {
-  background-color: #27ae60;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
 }
 
 .btn-pdf {
-  background-color: #e74c3c;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
   color: white;
   border: none;
-  border-radius: 4px;
-  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  padding: 1rem 2rem;
   cursor: pointer;
   font-size: 1rem;
-  font-weight: 500;
-  transition: background-color 0.3s;
+  font-weight: 600;
+  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .btn-pdf:hover {
-  background-color: #c0392b;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
 }
 
 .btn-excel {
-  background-color: #27ae60;
+  background: linear-gradient(135deg, #27ae60, #229954);
   color: white;
   border: none;
-  border-radius: 4px;
-  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  padding: 1rem 2rem;
   cursor: pointer;
   font-size: 1rem;
-  font-weight: 500;
-  transition: background-color 0.3s;
+  font-weight: 600;
+  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .btn-excel:hover {
-  background-color: #229954;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
 }
 
 .resumen {
-  border-top: 2px solid #ecf0f1;
+  border-top: 2px solid #e9ecef;
   padding-top: 1.5rem;
 }
 
@@ -231,70 +387,108 @@
 }
 
 .total-cotizacion h3 {
-  color: #2c3e50;
-  font-size: 1.5rem;
+  background: linear-gradient(135deg, #c13584 0%, #f12a9b 100%);
+  color: white;
+  font-size: 1.8rem;
   margin: 0;
-  padding: 1rem;
-  background-color: #ecf0f1;
-  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
   display: inline-block;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  min-width: 300px;
 }
 
 .tabla-insumos {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   background: white;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   margin-top: 1rem;
+  border: 1px solid #e9ecef;
 }
 
 .tabla-insumos th {
-  background-color: #27ae60;
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
   color: white;
-  padding: 1rem;
+  padding: 1.2rem 1rem;
   text-align: left;
   font-weight: 600;
   font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tabla-insumos th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.tabla-insumos th:last-child {
+  border-top-right-radius: 12px;
 }
 
 .tabla-insumos td {
-  padding: 0.8rem;
-  border-bottom: 1px solid #ecf0f1;
+  padding: 1rem;
+  border-bottom: 1px solid #f1f3f4;
   vertical-align: middle;
+  transition: background-color 0.2s ease;
 }
 
 .tabla-insumos tr:hover {
-  background-color: #f8f9fa;
+  background-color: #f0fff4;
+  transform: scale(1.002);
+  transition: all 0.2s ease;
+}
+
+.tabla-insumos tr:last-child td:first-child {
+  border-bottom-left-radius: 12px;
+}
+
+.tabla-insumos tr:last-child td:last-child {
+  border-bottom-right-radius: 12px;
 }
 
 .nombre-insumo {
-  font-weight: 500;
+  font-weight: 600;
   color: #2c3e50;
+  font-size: 1rem;
 }
 
 .cantidad-unitaria,
 .cantidad-total {
   text-align: center;
-  font-weight: 600;
+  font-weight: 700;
   color: #27ae60;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .unidad-medida {
   text-align: center;
   color: #7f8c8d;
   font-style: italic;
+  font-weight: 500;
+  font-size: 0.9rem;
 }
 
 .sin-insumos {
   text-align: center;
-  color: #7f8c8d;
+  color: #6c757d;
   font-style: italic;
-  padding: 2rem;
-  background-color: #f8f9fa;
-  border-radius: 8px;
+  padding: 3rem;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 16px;
   margin-top: 1rem;
+  font-size: 1.1rem;
+  border: 2px dashed #dee2e6;
 }
 
 /* Estilos para la vista detallada de insumos por producto */
@@ -304,43 +498,59 @@
 
 .producto-insumos {
   margin-bottom: 2rem;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  border-radius: 16px;
   overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.producto-insumos:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
 .producto-titulo {
-  background-color: #f39c12;
+  background: linear-gradient(135deg, #f39c12, #e67e22);
   color: white;
   margin: 0;
-  padding: 1rem;
-  font-size: 1.1rem;
-  font-weight: 600;
+  padding: 1.5rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .tabla-insumos-detalle {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   background: white;
 }
 
 .tabla-insumos-detalle th {
-  background-color: #e67e22;
+  background: linear-gradient(135deg, #e67e22, #d35400);
   color: white;
-  padding: 0.8rem;
+  padding: 1rem;
   text-align: left;
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .tabla-insumos-detalle td {
-  padding: 0.6rem 0.8rem;
-  border-bottom: 1px solid #f0f0f0;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #f8f9fa;
   vertical-align: middle;
+  transition: background-color 0.2s ease;
 }
 
 .tabla-insumos-detalle tr:hover {
-  background-color: #fdf2e6;
+  background-color: #fff8f0;
+  transform: scale(1.001);
+  transition: all 0.2s ease;
 }
 
 /* Responsive */
@@ -366,17 +576,24 @@
 
 /* Estilos para el formulario de datos del proveedor */
 .datos-proveedor {
-  background: #f8f9fa;
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid #e9ecef;
+  background: linear-gradient(135deg, #f8fffe, #f0fff4);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 2px solid #e8f5e8;
   margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(46, 204, 113, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.datos-proveedor:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(46, 204, 113, 0.15);
 }
 
 .fila-datos {
   display: flex;
-  gap: 15px;
-  margin-bottom: 15px;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
   align-items: end;
 }
 
@@ -393,28 +610,34 @@
 
 .campo-grupo label {
   font-weight: 600;
-  margin-bottom: 5px;
-  color: #495057;
-  font-size: 0.9rem;
+  margin-bottom: 8px;
+  color: #2c3e50;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .campo-grupo input {
-  padding: 8px 12px;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  padding: 0.8rem 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  background: white;
 }
 
 .campo-grupo input:focus {
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  border-color: #2ecc71;
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.1);
+  transform: translateY(-1px);
 }
 
 .campo-grupo input::placeholder {
-  color: #6c757d;
+  color: #95a5a6;
   opacity: 1;
+  font-style: italic;
 }
 
 /* Responsive para formulario de datos */
@@ -429,7 +652,43 @@
   }
   
   .datos-proveedor {
-    padding: 15px;
+    padding: 1.5rem;
+  }
+
+  .app {
+    padding: 1rem;
+  }
+  
+  .cotizacion-container {
+    padding: 1.5rem;
+  }
+  
+  .select-producto {
+    min-width: 200px;
+  }
+  
+  .tabla-cotizacion th,
+  .tabla-cotizacion td {
+    padding: 0.7rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .acciones {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-agregar,
+  .btn-pdf,
+  .btn-excel {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .total-cotizacion h3 {
+    font-size: 1.4rem;
+    min-width: auto;
+    padding: 1rem 1.5rem;
   }
 }
 
@@ -441,4 +700,83 @@
   .campo-grupo {
     min-width: 200px;
   }
+
+  .app h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Animaciones y efectos adicionales */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cotizacion-container {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.tabla-cotizacion tr {
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #c13584, #c13584);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #c13584, #c13584);
+}
+
+/* Efectos de loading para botones */
+.btn-agregar:active,
+.btn-pdf:active,
+.btn-excel:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* Mejoras en accesibilidad */
+.tabla-cotizacion th {
+  position: relative;
+}
+
+.tabla-cotizacion th::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Estados de hover para inputs */
+.input-codigo:hover,
+.select-producto:hover,
+.select-talla:hover,
+.select-color:hover,
+.input-observaciones:hover,
+.input-cantidad:hover,
+.input-valor:hover,
+.input-descuento:hover {
+  border-color: #bdc3c7;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }

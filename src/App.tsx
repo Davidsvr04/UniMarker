@@ -149,7 +149,12 @@ function App() {
     }
 
     try {
-      const nombreArchivo = await generarPDFCotizacion(itemsConDatos, datosProveedor)
+      const { total } = calcularTotalesCotizacion(itemsConDatos)
+      const datosConValorTotal = {
+        ...datosProveedor,
+        valor: formatearMoneda(total)
+      }
+      const nombreArchivo = await generarPDFCotizacion(itemsConDatos, datosConValorTotal)
       alert(`PDF generado exitosamente: ${nombreArchivo}`)
     } catch (error) {
       console.error('Error al generar PDF:', error)
@@ -176,7 +181,11 @@ function App() {
 
     try {
       const { total } = calcularTotalesCotizacion(itemsConDatos)
-      generateExcel(itemsConDatos, datosProveedor, total)
+      const datosConValorTotal = {
+        ...datosProveedor,
+        valor: formatearMoneda(total)
+      }
+      generateExcel(itemsConDatos, datosConValorTotal, total)
       alert('Excel generado y descargado exitosamente')
     } catch (error) {
       console.error('Error al generar Excel:', error)
@@ -284,13 +293,14 @@ function App() {
 
           <div className="fila-datos">
             <div className="campo-grupo">
-              <label htmlFor="valor">Valor:</label>
+              <label htmlFor="valor">Valor Total:</label>
               <input
                 id="valor"
                 type="text"
-                value={datosProveedor.valor}
-                onChange={(e) => actualizarDatosProveedor('valor', e.target.value)}
-                placeholder="Valor acordado"
+                value={formatearMoneda(calcularTotalCotizacion(items))}
+                readOnly
+                placeholder="Valor total calculado automáticamente"
+                style={{ backgroundColor: '#f8f9fa', cursor: 'not-allowed' }}
               />
             </div>
             <div className="campo-grupo">

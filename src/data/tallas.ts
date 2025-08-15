@@ -7,5 +7,6 @@ export const tallas: Talla[] = [
   { codigo: '04', nombre: 'L' },
   { codigo: '05', nombre: 'XL' },
   { codigo: '06', nombre: 'XXL' },
-  { codigo: '07', nombre: 'XXXL' }
+  { codigo: '07', nombre: 'XXXL' },
+  { codigo: '08', nombre: 'XXXXL' }
 ]

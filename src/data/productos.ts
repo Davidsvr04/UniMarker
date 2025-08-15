@@ -129,6 +129,7 @@ export const productos: Producto[] = [
       { "id": "7", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 1.1, "unidadMedida": "metros" }
     ]
   },
+
   {
     "codigo": "12",
     "nombre": "CUELLO RUTH DAMA PANTALON JOGGER",
@@ -148,7 +149,7 @@ export const productos: Producto[] = [
   },
   {
     "codigo": "31",
-    "nombre": "CUELLO V DEPORTIVO DAMA PANTALOR JOGGER CORTE LATERAL",
+    "nombre": "CUELLO V DEPORTIVO DAMA PANTALON JOGGER CORTE LATERAL",
     "valorUnitario": 13000,
     "insumos": [
       { "id": "1", "nombre": "TELA MATERIAL 1", "cantidadPorUnidad": 1.91, "unidadMedida": "metros" },
@@ -162,7 +163,7 @@ export const productos: Producto[] = [
     ]
   },
   {
-    "codigo": "017",
+    "codigo": "17",
     "nombre": "KIMONO EMBARAZADA DAMA PANTALON RIB",
     "valorUnitario": 9000,
     "insumos": [
@@ -207,7 +208,7 @@ export const productos: Producto[] = [
     ]
   },
   {
-    "codigo": "00",
+    "codigo": "49",
     "nombre": "UNIFORME UCC CUELLO V NERU",
     "valorUnitario": 13000,
     "insumos": [
@@ -251,7 +252,7 @@ export const productos: Producto[] = [
     ]
   },
   {
-    "codigo": "00",
+    "codigo": "50",
     "nombre": "CHALECO - TELA LYCRADA",
     "valorUnitario": 20000,
     "insumos": [
@@ -262,7 +263,7 @@ export const productos: Producto[] = [
     ]
   },
   {
-    "codigo": "00",
+    "codigo": "51",
     "nombre": "CHALECO - TELA RIGIDA",
     "valorUnitario": 20000,
     "insumos": [
@@ -273,7 +274,7 @@ export const productos: Producto[] = [
     ]
   },
   {
-    "codigo": "00",
+    "codigo": "52",
     "nombre": "GORRO - CIRUJANO - HOMBRE - UNICOLOR",
     "valorUnitario": 5000,
     "insumos": [
@@ -283,7 +284,7 @@ export const productos: Producto[] = [
     ]
   },
   {
-    "codigo": "00",
+    "codigo": "53",
     "nombre": "GORRO GUARDA CABELLO - MUJER - UNICOLOR",
     "valorUnitario": 5000,
     "insumos": [
@@ -292,7 +293,7 @@ export const productos: Producto[] = [
     ]
   },
   {
-    "codigo": "00",
+    "codigo": "54",
     "nombre": "GORRO - CIRUJANO - HOMBRE - ESTAMPADO",
     "valorUnitario": 5000,
     "insumos": [
@@ -302,7 +303,7 @@ export const productos: Producto[] = [
     ]
   },
   {
-    "codigo": "00",
+    "codigo": "55",
     "nombre": "GORRO GUARDA CABELLO - MUJER - ESTAMPADO",
     "valorUnitario": 5000,
     "insumos": [
@@ -311,7 +312,7 @@ export const productos: Producto[] = [
     ]
   },
   {
-    "codigo": "00",
+    "codigo": "56",
     "nombre": "CAMISA ESTAMPADA",
     "valorUnitario": 8000,
     "insumos": [
@@ -368,7 +369,7 @@ export const productos: Producto[] = [
     ]
   },
   {
-    "codigo": "00",
+    "codigo": "57",
     "nombre": "CUELLO V CIERRE HOMBRE - GENERO",
     "valorUnitario": 8500,
     "insumos": [
@@ -388,316 +389,6 @@ export const productos: Producto[] = [
       { "id": "3", "nombre": "MARQUILLA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "4", "nombre": "CORDON", "cantidadPorUnidad": 1.5, "unidadMedida": "metros" },
       { "id": "5", "nombre": "BANDERA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
-    ]
-  },
-  {
-    "codigo": "01",
-    "nombre": "CUELLO V DAMA PANTALON TRADICIONAL",
-    "valorUnitario": 11000,
-    "insumos": [
-      { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 2.028, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
-      { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
-    ]
-  },
-  {
-    "codigo": "031",
-    "nombre": "PRINCESA DAMA PANTALON TRADICIONAL",
-    "valorUnitario": 13000,
-    "insumos": [
-      { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 2.13, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
-      { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "7", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 3.1, "unidadMedida": "metros" },
-      { "id": "8", "nombre": "CIERRE PLASTICO 55CM", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
-    ]
-  },
-
-  {
-    "codigo": "032",
-    "nombre": "BOLERO DAMA PANTALON JOGGER CORTE LATERAL",
-    "valorUnitario": 13000,
-    "insumos": [
-      { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 2.15, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
-      { "id": "5", "nombre": "CIERRE INVISIBLE 30 CM", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "6", "nombre": "ELASTICO DE 4CM PARA PRETINA", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
-      { "id": "7", "nombre": "TOBILLO ELASTICO 3 CM", "cantidadPorUnidad": 0.7, "unidadMedida": "metros" },
-      { "id": "8", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
-    ]
-  },
-  {
-    "codigo": "033",
-    "nombre": "CRUZADO DAMA PANTALON TRADICIONAL",
-    "valorUnitario": 8500,
-    "insumos": [
-      { "id": "1", "nombre": "TELA PROMEDIO", "cantidadPorUnidad": 2.09, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
-      { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "7", "nombre": "SESGO PLANO PLANCHADO", "cantidadPorUnidad": 2.1, "unidadMedida": "metros" },
-      { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 1.1, "unidadMedida": "metros" }
-    ]
-  },
-  {
-    "codigo": "034",
-    "nombre": "CUELLO TRENZA PANTALON TRADICIONAL",
-    "valorUnitario": 13000,
-    "insumos": [
-      { "id": "1", "nombre": "TELA ANCHO 1,78", "cantidadPorUnidad": 1.6, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
-      { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
-    ]
-  },
-  {
-    "codigo": "035",
-    "nombre": "CUELLO REDONDO DAMA PANTALON TRADICIONAL",
-    "valorUnitario": 13000,
-    "insumos": [
-      { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 2.1, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
-      { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "7", "nombre": "CIERRE INVISIBLE 30CM", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
-    ]
-  },
-
-  {
-    "codigo": "036",
-    "nombre": "HGM DAMA PANTALON TRADICIONAL",
-    "valorUnitario": 15000,
-    "insumos": [
-      { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 2.14, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
-      { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "7", "nombre": "CIERRE INVISIBLE 30", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 2.3, "unidadMedida": "metros" },
-      { "id": "9", "nombre": "SESGO PLANO PLANCHADO", "cantidadPorUnidad": 0.4, "unidadMedida": "metros" }
-    ]
-  },
-  {
-    "codigo": "037",
-    "nombre": "CUELLO V MULTICOSTURAS DAMA PANTALON TRADICIONAL",
-    "valorUnitario": 13000,
-    "insumos": [
-      { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 2.04, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
-      { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
-    ]
-  },
-  {
-    "codigo": "038",
-    "nombre": "029 DAMA PANTALON TRADICIONAL",
-    "valorUnitario": 13000,
-    "insumos": [
-      { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 2.11, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
-      { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "7", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 1.1, "unidadMedida": "metros" }
-    ]
-  },
-  {
-    "codigo": "039",
-    "nombre": "CUELLO RUTH DAMA PANTALON JOGGER",
-    "valorUnitario": 15000,
-    "insumos": [
-      { "id": "1", "nombre": "TELA MAT 1", "cantidadPorUnidad": 0.95, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "TELA MAT 2", "cantidadPorUnidad": 1.38, "unidadMedida": "metros" },
-      { "id": "3", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "5", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
-      { "id": "6", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
-      { "id": "7", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 1.05, "unidadMedida": "metros" },
-      { "id": "9", "nombre": "CARTULINA INSTRUCCIÓN", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "10", "nombre": "RIB DE JOGGER", "cantidadPorUnidad": 0.25, "unidadMedida": "metros" },
-      { "id": "11", "nombre": "TRAZO DISTINTO PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
-    ]
-  },
-  {
-    "codigo": "040",
-    "nombre": "CUELLO V DEPORTIVO DAMA PANTALON JOGGER CORTE LATERAL",
-    "valorUnitario": 13000,
-    "insumos": [
-      { "id": "1", "nombre": "TELA MATERIAL 1", "cantidadPorUnidad": 1.91, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "TELA MATERIAL 2", "cantidadPorUnidad": 0.36, "unidadMedida": "metros" },
-      { "id": "3", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "5", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
-      { "id": "6", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
-      { "id": "7", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "8", "nombre": "TRAZO DISTINTO PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
-    ]
-  },
-  {
-    "codigo": "041",
-    "nombre": "KIMONO EMBARAZADA DAMA PANTALON RIB",
-    "valorUnitario": 9000,
-    "insumos": [
-      { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 2.46, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
-      { "id": "5", "nombre": "ELASTICO 3CM", "cantidadPorUnidad": 0.5, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "7", "nombre": "FAJON DE RIB", "cantidadPorUnidad": 0.3, "unidadMedida": "metros" },
-      { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 1.5, "unidadMedida": "metros" },
-      { "id": "9", "nombre": "TRAZO DISTINTO PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
-    ]
-  },
-  {
-    "codigo": "042",
-    "nombre": "CUELLO RIB DAMA PANTALON JOGGER",
-    "valorUnitario": 15000,
-    "insumos": [
-      { "id": "1", "nombre": "TELA MAT 1", "cantidadPorUnidad": 2, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "RIB MAT 2", "cantidadPorUnidad": 0.55, "unidadMedida": "metros" },
-      { "id": "3", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "5", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
-      { "id": "6", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
-      { "id": "7", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "8", "nombre": "CORDON DECORATIVO", "cantidadPorUnidad": 0.5, "unidadMedida": "metros" },
-      { "id": "9", "nombre": "TRAZO MAT 2", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
-    ]
-  },
-  {
-    "codigo": "043",
-    "nombre": "UNIFORME GABY DAMA PANTALON CON PRETINA",
-    "valorUnitario": 13000,
-    "insumos": [
-      { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 2.06, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
-      { "id": "5", "nombre": "ELASTICO 5CM", "cantidadPorUnidad": 0.3, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "7", "nombre": "CARTULINA INSTRUCCIÓN", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "8", "nombre": "PUNTERA METALICAS", "cantidadPorUnidad": 2, "unidadMedida": "unidades" }
-    ]
-  },
-  {
-    "codigo": "044",
-    "nombre": "UNIFORME UCC CUELLO V NERU",
-    "valorUnitario": 13000,
-    "insumos": [
-      { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 2.3, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
-      { "id": "5", "nombre": "ELASTICO 5CM", "cantidadPorUnidad": 0.65, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "7", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 2, "unidadMedida": "metros" }
-    ]
-  },
-  {
-    "codigo": "045",
-    "nombre": "CUELLO V DOTACION",
-    "valorUnitario": 8500,
-    "insumos": [
-      { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 2.028, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
-      { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
-    ]
-  },
-  {
-    "codigo": "046",
-    "nombre": "CUELLO ROMA",
-    "valorUnitario": 15000,
-    "insumos": [
-      { "id": "1", "nombre": "TELA -Material 1", "cantidadPorUnidad": 1.67, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "TELA -Material 2", "cantidadPorUnidad": 1.05, "unidadMedida": "metros" },
-      { "id": "3", "nombre": "TELA -Material 3", "cantidadPorUnidad": 1.05, "unidadMedida": "metros" },
-      { "id": "4", "nombre": "TELA -Material -Rib", "cantidadPorUnidad": 0.6, "unidadMedida": "metros" },
-      { "id": "5", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "6", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "7", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
-      { "id": "8", "nombre": "PUNTERA DE LUJO", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
-      { "id": "9", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
-      { "id": "10", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
-    ]
-  },
-
-  {
-    "codigo": "047",
-    "nombre": "CUELLO V HOMBRE PANTALON TRADICIONAL- Lafayette",
-    "valorUnitario": 11000,
-    "insumos": [
-      { "id": "1", "nombre": "TELA 1,78", "cantidadPorUnidad": 1.87, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
-      { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.95, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
-    ]
-  },
-  {
-    "codigo": "048",
-    "nombre": "CUELLO V CIERRE HOMBRE",
-    "valorUnitario": 13000,
-    "insumos": [
-      { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 2.25, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
-      { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.95, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "7", "nombre": "CIERRE PLASTICO 55CM", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 3.1, "unidadMedida": "metros" }
-    ]
-  },
-  {
-    "codigo": "049",
-    "nombre": "POLO CIERRE HOMBRE",
-    "valorUnitario": 13000,
-    "insumos": [
-      { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 2.55, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
-      { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.95, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "7", "nombre": "CIERRE PLASTICO 15CM", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 3.1, "unidadMedida": "metros" },
-      { "id": "9", "nombre": "SESGO PLANO PLANCHADO", "cantidadPorUnidad": 0.15, "unidadMedida": "metros" }
-    ]
-  },
-  {
-    "codigo": "050",
-    "nombre": "CUELLO V CIERRE HOMBRE -GENERO",
-    "valorUnitario": 8500,
-    "insumos": [
-      { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 1.88, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "ELASTICO", "cantidadPorUnidad": 0.95, "unidadMedida": "metros" }
     ]
   },
   {
@@ -749,16 +440,5 @@ export const productos: Producto[] = [
       { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
     ]
   },
-  {
-    "codigo": "055",
-    "nombre": "BATA POLO MANGA CORTA -LYCRADA (Duplicado)",
-    "valorUnitario": 9000,
-    "insumos": [
-      { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 1.39, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "CIERRE DE 55CM", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "3", "nombre": "MARQUILLA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
-    ]
-  }
 
 ]

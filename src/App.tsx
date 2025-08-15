@@ -352,8 +352,9 @@ function App() {
                     <input
                       type="text"
                       value={item.codigo}
-                      readOnly
+                      onChange={(e) => actualizarItem(item.id, 'codigo', e.target.value)}
                       className="input-codigo"
+                      placeholder="Código..."
                     />
                   </td>
                   <td>

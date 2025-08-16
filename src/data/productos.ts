@@ -66,6 +66,34 @@ export const productos: Producto[] = [
     ]
   },
   {
+    "codigo": "01-45",
+    "nombre": "CUELLO V DOTACION CAMISA",
+    "valorUnitario": 8500,
+    "insumos": [
+      { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 2.028, "unidadMedida": "metros" },
+      { "id": "2", "nombre": "MARQUILLA CAMISA DOTACION", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "3", "nombre": "MARQUILLA PANTALON DOTACION", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "4", "nombre": "BANDERA DOTACION", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
+      { "id": "5", "nombre": "ELASTICO CON CORDON", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
+      { "id": "6", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "7", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+    ]
+  },
+  {
+    "codigo": "02-45",
+    "nombre": "CUELLO V DOTACION PANTALON",
+    "valorUnitario": 8500,
+    "insumos": [
+      { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 2.028, "unidadMedida": "metros" },
+      { "id": "2", "nombre": "MARQUILLA CAMISA DOTACION", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "3", "nombre": "MARQUILLA PANTALON DOTACION", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "4", "nombre": "BANDERA DOTACION", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
+      { "id": "5", "nombre": "ELASTICO CON CORDON", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
+      { "id": "6", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "7", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+    ]
+  },
+  {
     "codigo": "01-03",
     "nombre": "PRINCESA DAMA PANTALON TRADICIONAL CAMISA",
     "valorUnitario": 13000,

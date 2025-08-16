@@ -4,7 +4,7 @@ import type { ItemCotizacion, DatosProveedor } from './types'
 import { productos } from './data/productos'
 import { tallas } from './data/tallas'
 import { colores } from './data/colores'
-import { calcularValorTotal, calcularTotalCotizacion, calcularTotalesCotizacion, formatearMoneda, calcularInsumosRequeridos, obtenerInsumosPorProducto, generarCodigoCompleto, generarNombreCompleto } from './utils/calculation'
+import { calcularValorTotal, calcularTotalCotizacion, calcularTotalesCotizacion, formatearMoneda, calcularInsumosRequeridos, obtenerInsumosPorProducto, generarCodigoCompleto, generarNombreCompleto, productoTieneSesgo } from './utils/calculation'
 import { generarPDFCotizacion } from './utils/pdfGenerator'
 import { generateExcel } from './utils/excelGenerator'
 
@@ -16,6 +16,7 @@ function App() {
       nombre: '',
       talla: '',
       color: '',
+      colorSesgo: '',
       observaciones: '',
       cantidad: 0,
       valorUnitario: 0,
@@ -116,6 +117,7 @@ function App() {
       nombre: '',
       talla: '',
       color: '',
+      colorSesgo: '',
       observaciones: '',
       cantidad: 0,
       valorUnitario: 0,
@@ -347,6 +349,7 @@ function App() {
                 <th>Producto</th>
                 <th>Talla</th>
                 <th>Color</th>
+                <th>Color Sesgo</th>
                 <th>Observaciones</th>
                 <th>Cantidad</th>
                 <th>Valor Unitario</th>
@@ -408,6 +411,31 @@ function App() {
                         </option>
                       ))}
                     </select>
+                  </td>
+                  <td>
+                    {(() => {
+                      const producto = productos.find(p => p.nombre === item.nombre)
+                      const tienesSesgo = producto ? productoTieneSesgo(producto) : false
+                      
+                      if (tienesSesgo) {
+                        return (
+                          <select
+                            value={item.colorSesgo}
+                            onChange={(e) => actualizarItem(item.id, 'colorSesgo', e.target.value)}
+                            className="select-color"
+                          >
+                            <option value="">Seleccionar color sesgo...</option>
+                            {colores.map((color) => (
+                              <option key={color.codigo} value={color.nombre}>
+                                {color.nombre}
+                              </option>
+                            ))}
+                          </select>
+                        )
+                      } else {
+                        return <span style={{ color: '#999', fontStyle: 'italic' }}>N/A</span>
+                      }
+                    })()}
                   </td>
                   <td>
                     <input

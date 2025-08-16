@@ -57,6 +57,12 @@ export const obtenerCantidadElastico = (talla: string): number => {
   return cantidadesElasticoPorTalla[talla] || 0.85 // valor por defecto si no encuentra la talla
 }
 
+export const productoTieneSesgo = (producto: Producto): boolean => {
+  return producto.insumos.some(insumo => 
+    insumo.nombre.toUpperCase().includes('SESGO')
+  )
+}
+
 export const calcularInsumosRequeridos = (items: ItemCotizacion[], productos: Producto[]): InsumoCalculado[] => {
   const insumosMap = new Map<string, InsumoCalculado>()
 
@@ -66,14 +72,20 @@ export const calcularInsumosRequeridos = (items: ItemCotizacion[], productos: Pr
       if (producto && producto.insumos) {
         producto.insumos.forEach((insumo: Insumo) => {
           let cantidadPorUnidad = insumo.cantidadPorUnidad
+          let nombreInsumo = insumo.nombre
           
           // Si es elástico y hay talla definida, usar cantidad específica por talla
           if (insumo.nombre.toUpperCase().includes('ELASTICO') && item.talla) {
             cantidadPorUnidad = obtenerCantidadElastico(item.talla)
           }
           
+          // Si es sesgo y hay color de sesgo definido, concatenar el color al nombre
+          if (insumo.nombre.toUpperCase().includes('SESGO') && item.colorSesgo) {
+            nombreInsumo = `${insumo.nombre} ${item.colorSesgo}`
+          }
+          
           const cantidadTotal = redondearNumero(cantidadPorUnidad * item.cantidad)
-          const key = `${insumo.id}-${insumo.nombre}`
+          const key = `${insumo.id}-${nombreInsumo}`
           
           if (insumosMap.has(key)) {
             const existing = insumosMap.get(key)!
@@ -82,6 +94,7 @@ export const calcularInsumosRequeridos = (items: ItemCotizacion[], productos: Pr
             insumosMap.set(key, {
               insumo: {
                 ...insumo,
+                nombre: nombreInsumo,
                 cantidadPorUnidad
               },
               cantidadTotal
@@ -104,15 +117,22 @@ export const obtenerInsumosPorProducto = (items: ItemCotizacion[], productos: Pr
           item,
           insumos: producto.insumos.map(insumo => {
             let cantidadPorUnidad = insumo.cantidadPorUnidad
+            let nombreInsumo = insumo.nombre
             
             // Si es elástico y hay talla definida, usar cantidad específica por talla
             if (insumo.nombre.toUpperCase().includes('ELASTICO') && item.talla) {
               cantidadPorUnidad = obtenerCantidadElastico(item.talla)
             }
             
+            // Si es sesgo y hay color de sesgo definido, concatenar el color al nombre
+            if (insumo.nombre.toUpperCase().includes('SESGO') && item.colorSesgo) {
+              nombreInsumo = `${insumo.nombre} ${item.colorSesgo}`
+            }
+            
             return {
               insumo: {
                 ...insumo,
+                nombre: nombreInsumo,
                 cantidadPorUnidad
               },
               cantidadTotal: redondearNumero(cantidadPorUnidad * item.cantidad)

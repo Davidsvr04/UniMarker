@@ -44,6 +44,7 @@ export interface ItemCotizacion {
   nombre: string
   talla: string
   color: string
+  colorSesgo: string
   observaciones: string
   cantidad: number
   valorUnitario: number

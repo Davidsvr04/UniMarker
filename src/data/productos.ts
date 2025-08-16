@@ -11,7 +11,9 @@ export const productos: Producto[] = [
       { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
       { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "7", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "8", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -24,7 +26,43 @@ export const productos: Producto[] = [
       { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
       { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "7", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "8", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+    ]
+  },
+  {
+    "codigo": "01-53",
+    "nombre": "SPORTCHI CAMISA",
+    "valorUnitario": 15000,
+    "insumos": [
+      { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 2.028, "unidadMedida": "metros" },
+      { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
+      { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
+      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "7", "nombre": "ELASTICO DE 4CM PARA PRETINA", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
+      { "id": "8", "nombre": "TOBILLO ELASTICO 3 CM", "cantidadPorUnidad": 0.7, "unidadMedida": "metros" },
+      { "id": "9", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "10", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+    ]
+  },
+  {
+    "codigo": "02-53",
+    "nombre": "SPORTCHI PANTALON",
+    "valorUnitario": 15000,
+    "insumos": [
+      { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 2.028, "unidadMedida": "metros" },
+      { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
+      { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
+      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "7", "nombre": "ELASTICO DE 4CM PARA PRETINA", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
+      { "id": "8", "nombre": "TOBILLO ELASTICO 3 CM", "cantidadPorUnidad": 0.7, "unidadMedida": "metros" },
+      { "id": "9", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "10", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -39,7 +77,9 @@ export const productos: Producto[] = [
       { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
       { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "7", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 3.1, "unidadMedida": "metros" },
-      { "id": "8", "nombre": "CIERRE PLASTICO 55CM", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "8", "nombre": "CIERRE PLASTICO 55CM", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "9", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "10", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -54,7 +94,9 @@ export const productos: Producto[] = [
       { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
       { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "7", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 3.1, "unidadMedida": "metros" },
-      { "id": "8", "nombre": "CIERRE PLASTICO 55CM", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "8", "nombre": "CIERRE PLASTICO 55CM", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "9", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "10", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -69,7 +111,9 @@ export const productos: Producto[] = [
       { "id": "5", "nombre": "CIERRE INVISIBLE 30 CM", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "6", "nombre": "ELASTICO DE 4CM PARA PRETINA", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
       { "id": "7", "nombre": "TOBILLO ELASTICO 3 CM", "cantidadPorUnidad": 0.7, "unidadMedida": "metros" },
-      { "id": "8", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "8", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "9", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "10", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -84,7 +128,9 @@ export const productos: Producto[] = [
       { "id": "5", "nombre": "CIERRE INVISIBLE 30 CM", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "6", "nombre": "ELASTICO DE 4CM PARA PRETINA", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
       { "id": "7", "nombre": "TOBILLO ELASTICO 3 CM", "cantidadPorUnidad": 0.7, "unidadMedida": "metros" },
-      { "id": "8", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "8", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "9", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "10", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -99,7 +145,9 @@ export const productos: Producto[] = [
       { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
       { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "7", "nombre": "SESGO PLANO PLANCHADO", "cantidadPorUnidad": 2.1, "unidadMedida": "metros" },
-      { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 1.1, "unidadMedida": "metros" }
+      { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 1.1, "unidadMedida": "metros" },
+      { "id": "9", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "10", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -114,7 +162,9 @@ export const productos: Producto[] = [
       { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
       { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "7", "nombre": "SESGO PLANO PLANCHADO", "cantidadPorUnidad": 2.1, "unidadMedida": "metros" },
-      { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 1.1, "unidadMedida": "metros" }
+      { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 1.1, "unidadMedida": "metros" },
+      { "id": "9", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "10", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -127,7 +177,9 @@ export const productos: Producto[] = [
       { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
       { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "7", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "8", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -140,7 +192,9 @@ export const productos: Producto[] = [
       { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
       { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "7", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "8", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -154,7 +208,9 @@ export const productos: Producto[] = [
       { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
       { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
       { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "7", "nombre": "CIERRE INVISIBLE 30CM", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "7", "nombre": "CIERRE INVISIBLE 30CM", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "8", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "9", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -168,7 +224,9 @@ export const productos: Producto[] = [
       { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
       { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
       { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "7", "nombre": "CIERRE INVISIBLE 30CM", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "7", "nombre": "CIERRE INVISIBLE 30CM", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "8", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "9", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -184,7 +242,9 @@ export const productos: Producto[] = [
       { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "7", "nombre": "CIERRE INVISIBLE 30", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 2.3, "unidadMedida": "metros" },
-      { "id": "9", "nombre": "SESGO PLANO PLANCHADO", "cantidadPorUnidad": 0.4, "unidadMedida": "metros" }
+      { "id": "9", "nombre": "SESGO PLANO PLANCHADO", "cantidadPorUnidad": 0.4, "unidadMedida": "metros" },
+      { "id": "10", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "11", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -200,7 +260,9 @@ export const productos: Producto[] = [
       { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "7", "nombre": "CIERRE INVISIBLE 30", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 2.3, "unidadMedida": "metros" },
-      { "id": "9", "nombre": "SESGO PLANO PLANCHADO", "cantidadPorUnidad": 0.4, "unidadMedida": "metros" }
+      { "id": "9", "nombre": "SESGO PLANO PLANCHADO", "cantidadPorUnidad": 0.4, "unidadMedida": "metros" },
+      { "id": "10", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "11", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -213,7 +275,9 @@ export const productos: Producto[] = [
       { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
       { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "7", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "8", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -226,7 +290,9 @@ export const productos: Producto[] = [
       { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
       { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "7", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "8", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -240,7 +306,9 @@ export const productos: Producto[] = [
       { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
       { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
       { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "7", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 1.1, "unidadMedida": "metros" }
+      { "id": "7", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 1.1, "unidadMedida": "metros" },
+      { "id": "8", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "9", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -254,7 +322,9 @@ export const productos: Producto[] = [
       { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
       { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
       { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "7", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 1.1, "unidadMedida": "metros" }
+      { "id": "7", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 1.1, "unidadMedida": "metros" },
+      { "id": "8", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "9", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
 
@@ -272,7 +342,9 @@ export const productos: Producto[] = [
       { "id": "7", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 1.05, "unidadMedida": "metros" },
       { "id": "9", "nombre": "RIB DE JOGGER", "cantidadPorUnidad": 0.25, "unidadMedida": "metros" },
-      { "id": "10", "nombre": "TRAZO DISTINTO PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "10", "nombre": "TRAZO DISTINTO PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "11", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "12", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -289,7 +361,9 @@ export const productos: Producto[] = [
       { "id": "7", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 1.05, "unidadMedida": "metros" },
       { "id": "9", "nombre": "RIB DE JOGGER", "cantidadPorUnidad": 0.25, "unidadMedida": "metros" },
-      { "id": "10", "nombre": "TRAZO DISTINTO PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "10", "nombre": "TRAZO DISTINTO PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "11", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "12", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -304,7 +378,9 @@ export const productos: Producto[] = [
       { "id": "5", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
       { "id": "6", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
       { "id": "7", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "8", "nombre": "TRAZO DISTINTO PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "8", "nombre": "TRAZO DISTINTO PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "9", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "10", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -319,7 +395,9 @@ export const productos: Producto[] = [
       { "id": "5", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
       { "id": "6", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
       { "id": "7", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "8", "nombre": "TRAZO DISTINTO PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "8", "nombre": "TRAZO DISTINTO PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "9", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "10", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -334,7 +412,9 @@ export const productos: Producto[] = [
       { "id": "5", "nombre": "ELASTICO 3CM", "cantidadPorUnidad": 0.5, "unidadMedida": "metros" },
       { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "7", "nombre": "FAJON DE RIB", "cantidadPorUnidad": 0.3, "unidadMedida": "metros" },
-      { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 1.5, "unidadMedida": "metros" }
+      { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 1.5, "unidadMedida": "metros" },
+      { "id": "9", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "10", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -349,7 +429,9 @@ export const productos: Producto[] = [
       { "id": "5", "nombre": "ELASTICO 3CM", "cantidadPorUnidad": 0.5, "unidadMedida": "metros" },
       { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "7", "nombre": "FAJON DE RIB", "cantidadPorUnidad": 0.3, "unidadMedida": "metros" },
-      { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 1.5, "unidadMedida": "metros" }
+      { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 1.5, "unidadMedida": "metros" },
+      { "id": "9", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "10", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -365,7 +447,9 @@ export const productos: Producto[] = [
       { "id": "6", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
       { "id": "7", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "8", "nombre": "CORDON DECORATIVO", "cantidadPorUnidad": 0.5, "unidadMedida": "metros" },
-      { "id": "9", "nombre": "TRAZO MAT 2", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "9", "nombre": "TRAZO MAT 2", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "10", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "11", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -381,7 +465,9 @@ export const productos: Producto[] = [
       { "id": "6", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
       { "id": "7", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "8", "nombre": "CORDON DECORATIVO", "cantidadPorUnidad": 0.5, "unidadMedida": "metros" },
-      { "id": "9", "nombre": "TRAZO MAT 2", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "9", "nombre": "TRAZO MAT 2", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "10", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "11", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -395,7 +481,9 @@ export const productos: Producto[] = [
       { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
       { "id": "5", "nombre": "ELASTICO 5CM", "cantidadPorUnidad": 0.3, "unidadMedida": "metros" },
       { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "7", "nombre": "PUNTERA METALICAS", "cantidadPorUnidad": 2, "unidadMedida": "unidades" }
+      { "id": "7", "nombre": "PUNTERA METALICAS", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
+      { "id": "8", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "9", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -409,7 +497,9 @@ export const productos: Producto[] = [
       { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
       { "id": "5", "nombre": "ELASTICO 5CM", "cantidadPorUnidad": 0.3, "unidadMedida": "metros" },
       { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "7", "nombre": "PUNTERA METALICAS", "cantidadPorUnidad": 2, "unidadMedida": "unidades" }
+      { "id": "7", "nombre": "PUNTERA METALICAS", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
+      { "id": "8", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "9", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -423,7 +513,9 @@ export const productos: Producto[] = [
       { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
       { "id": "5", "nombre": "ELASTICO 5CM", "cantidadPorUnidad": 0.65, "unidadMedida": "metros" },
       { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "7", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 2, "unidadMedida": "metros" }
+      { "id": "7", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 2, "unidadMedida": "metros" },
+      { "id": "7", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "8", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -437,7 +529,9 @@ export const productos: Producto[] = [
       { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
       { "id": "5", "nombre": "ELASTICO 5CM", "cantidadPorUnidad": 0.65, "unidadMedida": "metros" },
       { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "7", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 2, "unidadMedida": "metros" }
+      { "id": "7", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 2, "unidadMedida": "metros" },
+      { "id": "8", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "9", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -450,7 +544,9 @@ export const productos: Producto[] = [
       { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
       { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "7", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "8", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -463,7 +559,9 @@ export const productos: Producto[] = [
       { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
       { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "7", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "8", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -480,7 +578,9 @@ export const productos: Producto[] = [
       { "id": "7", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
       { "id": "8", "nombre": "PUNTERA DE LUJO", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
       { "id": "9", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
-      { "id": "10", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "10", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "11", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "12", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -497,7 +597,9 @@ export const productos: Producto[] = [
       { "id": "7", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
       { "id": "8", "nombre": "PUNTERA DE LUJO", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
       { "id": "9", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
-      { "id": "10", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "10", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "11", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "12", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -508,7 +610,9 @@ export const productos: Producto[] = [
       { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 1.16, "unidadMedida": "metros" },
       { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "3", "nombre": "BANDERA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "CIERRE", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "4", "nombre": "CIERRE", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "5", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "6", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -519,7 +623,9 @@ export const productos: Producto[] = [
       { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 1.16, "unidadMedida": "metros" },
       { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "3", "nombre": "BANDERA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "CIERRE", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "4", "nombre": "CIERRE", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "5", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "6", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -529,7 +635,9 @@ export const productos: Producto[] = [
     "insumos": [
       { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 0.3, "unidadMedida": "metros" },
       { "id": "2", "nombre": "RIB", "cantidadPorUnidad": 0.1, "unidadMedida": "metros" },
-      { "id": "3", "nombre": "BANDERA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "3", "nombre": "BANDERA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "4", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "5", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -538,7 +646,9 @@ export const productos: Producto[] = [
     "valorUnitario": 5000,
     "insumos": [
       { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 0.35, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "BANDERA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "2", "nombre": "BANDERA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "3", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "4", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -548,7 +658,9 @@ export const productos: Producto[] = [
     "insumos": [
       { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 0.3, "unidadMedida": "metros" },
       { "id": "2", "nombre": "RIB", "cantidadPorUnidad": 0.1, "unidadMedida": "metros" },
-      { "id": "3", "nombre": "BANDERA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "3", "nombre": "BANDERA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "4", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "5", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -557,7 +669,9 @@ export const productos: Producto[] = [
     "valorUnitario": 5000,
     "insumos": [
       { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 0.35, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "BANDERA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "2", "nombre": "BANDERA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "3", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "4", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
     ]
   },
   {
@@ -569,7 +683,9 @@ export const productos: Producto[] = [
       { "id": "2", "nombre": "TELA SUBLIMADA", "cantidadPorUnidad": 1.07, "unidadMedida": "metros" },
       { "id": "3", "nombre": "CIERRE INVISIBLE YKK", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "4", "nombre": "MARQUILLA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "5", "nombre": "BANDERA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "5", "nombre": "BANDERA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "6", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "7", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
     ]
   },
 
@@ -583,7 +699,9 @@ export const productos: Producto[] = [
       { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
       { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.95, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "7", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "8", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
     ]
   },
   {
@@ -596,7 +714,9 @@ export const productos: Producto[] = [
       { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
       { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.95, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "7", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "8", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
     ]
   },
   {
@@ -611,7 +731,9 @@ export const productos: Producto[] = [
       { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.95, "unidadMedida": "metros" },
       { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "7", "nombre": "CIERRE PLASTICO 55CM", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 3.1, "unidadMedida": "metros" }
+      { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 3.1, "unidadMedida": "metros" },
+      { "id": "9", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "10", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -626,7 +748,9 @@ export const productos: Producto[] = [
       { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.95, "unidadMedida": "metros" },
       { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "7", "nombre": "CIERRE PLASTICO 55CM", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 3.1, "unidadMedida": "metros" }
+      { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 3.1, "unidadMedida": "metros" },
+      { "id": "9", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "10", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -642,7 +766,9 @@ export const productos: Producto[] = [
       { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "7", "nombre": "CIERRE PLASTICO 15CM", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 3.1, "unidadMedida": "metros" },
-      { "id": "9", "nombre": "SESGO PLANO PLANCHADO", "cantidadPorUnidad": 0.15, "unidadMedida": "metros" }
+      { "id": "9", "nombre": "SESGO PLANO PLANCHADO", "cantidadPorUnidad": 0.15, "unidadMedida": "metros" },
+      { "id": "10", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "11", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -658,7 +784,9 @@ export const productos: Producto[] = [
       { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "7", "nombre": "CIERRE PLASTICO 15CM", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 3.1, "unidadMedida": "metros" },
-      { "id": "9", "nombre": "SESGO PLANO PLANCHADO", "cantidadPorUnidad": 0.15, "unidadMedida": "metros" }
+      { "id": "9", "nombre": "SESGO PLANO PLANCHADO", "cantidadPorUnidad": 0.15, "unidadMedida": "metros" },
+      { "id": "10", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "11", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -669,7 +797,9 @@ export const productos: Producto[] = [
       { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 1.88, "unidadMedida": "metros" },
       { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "ELASTICO", "cantidadPorUnidad": 0.95, "unidadMedida": "metros" }
+      { "id": "4", "nombre": "ELASTICO", "cantidadPorUnidad": 0.95, "unidadMedida": "metros" },
+      { "id": "5", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "6", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -680,7 +810,9 @@ export const productos: Producto[] = [
       { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 1.88, "unidadMedida": "metros" },
       { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "ELASTICO", "cantidadPorUnidad": 0.95, "unidadMedida": "metros" }
+      { "id": "4", "nombre": "ELASTICO", "cantidadPorUnidad": 0.95, "unidadMedida": "metros" },
+      { "id": "5", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "6", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -692,7 +824,9 @@ export const productos: Producto[] = [
       { "id": "2", "nombre": "ELASTICO", "cantidadPorUnidad": 0.65, "unidadMedida": "metros" },
       { "id": "3", "nombre": "MARQUILLA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "4", "nombre": "CORDON", "cantidadPorUnidad": 1.5, "unidadMedida": "metros" },
-      { "id": "5", "nombre": "BANDERA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "5", "nombre": "BANDERA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "6", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "7", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -706,7 +840,9 @@ export const productos: Producto[] = [
       { "id": "4", "nombre": "TALLA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "5", "nombre": "BANDERA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "6", "nombre": "OJALADA Y ABOTONADA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "7", "nombre": "CIERRE DE 15", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "7", "nombre": "CIERRE DE 15", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "8", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "9", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -718,7 +854,9 @@ export const productos: Producto[] = [
       { "id": "2", "nombre": "CIERRE DE 55CM", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "3", "nombre": "MARQUILLA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "4", "nombre": "ELATICO MANGAS", "cantidadPorUnidad": 0.5, "unidadMedida": "metros" },
-      { "id": "5", "nombre": "BANDERA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "5", "nombre": "BANDERA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "6", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "7", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -730,7 +868,9 @@ export const productos: Producto[] = [
       { "id": "2", "nombre": "CIERRE DE 55CM", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "3", "nombre": "MARQUILLA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "4", "nombre": "ELATICO MANGAS", "cantidadPorUnidad": 0.5, "unidadMedida": "metros" },
-      { "id": "5", "nombre": "BANDERA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "5", "nombre": "BANDERA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "6", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "7", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -741,7 +881,9 @@ export const productos: Producto[] = [
       { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 1.39, "unidadMedida": "metros" },
       { "id": "2", "nombre": "CIERRE DE 55CM", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "3", "nombre": "MARQUILLA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" }
+      { "id": "4", "nombre": "BANDERA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "5", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "6", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
 

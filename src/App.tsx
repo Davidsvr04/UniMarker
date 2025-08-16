@@ -63,7 +63,7 @@ function App() {
                 const tallaObj = tallas.find(t => t.nombre === item.talla)
                 const colorObj = colores.find(c => c.nombre === item.color)
                 if (tallaObj && colorObj) {
-                  itemActualizado.codigo = generarCodigoCompleto(producto.codigo, tallaObj.codigo, colorObj.codigo)
+                  itemActualizado.codigo = generarCodigoCompleto(producto.codigo, colorObj.codigo, tallaObj.codigo)
                 }
               }
             }
@@ -76,7 +76,7 @@ function App() {
               const producto = productos.find(p => p.nombre === item.nombre)
               const colorObj = colores.find(c => c.nombre === item.color)
               if (producto && colorObj) {
-                itemActualizado.codigo = generarCodigoCompleto(producto.codigo, tallaObj.codigo, colorObj.codigo)
+                itemActualizado.codigo = generarCodigoCompleto(producto.codigo, colorObj.codigo, tallaObj.codigo)
               }
             }
           }
@@ -88,7 +88,7 @@ function App() {
               const producto = productos.find(p => p.nombre === item.nombre)
               const tallaObj = tallas.find(t => t.nombre === item.talla)
               if (producto && tallaObj) {
-                itemActualizado.codigo = generarCodigoCompleto(producto.codigo, tallaObj.codigo, colorObj.codigo)
+                itemActualizado.codigo = generarCodigoCompleto(producto.codigo, colorObj.codigo, tallaObj.codigo)
               }
             }
           }

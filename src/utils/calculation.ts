@@ -4,8 +4,8 @@ export const redondearNumero = (numero: number, decimales: number = 2): number =
   return Math.round(numero * Math.pow(10, decimales)) / Math.pow(10, decimales)
 }
 
-export const generarCodigoCompleto = (codigoProducto: string, codigoTalla: string, codigoColor: string): string => {
-  return `${codigoProducto}${codigoTalla}${codigoColor}`
+export const generarCodigoCompleto = (codigoProducto: string, codigoColor: string, codigoTalla: string): string => {
+  return `${codigoProducto}${codigoColor}${codigoTalla}`
 }
 
 export const generarNombreCompleto = (nombreProducto: string, nombreTalla: string, nombreColor: string): string => {

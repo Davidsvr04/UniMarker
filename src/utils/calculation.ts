@@ -65,6 +65,7 @@ export const productoTieneSesgo = (producto: Producto): boolean => {
 
 export const calcularInsumosRequeridos = (items: ItemCotizacion[], productos: Producto[]): InsumoCalculado[] => {
   const insumosMap = new Map<string, InsumoCalculado>()
+  const marquillasPorTalla = new Map<string, number>()
 
   items.forEach(item => {
     if (item.nombre && item.cantidad > 0) {
@@ -83,22 +84,61 @@ export const calcularInsumosRequeridos = (items: ItemCotizacion[], productos: Pr
           if (insumo.nombre.toUpperCase().includes('SESGO') && item.colorSesgo) {
             nombreInsumo = `${insumo.nombre} ${item.colorSesgo}`
           }
-          
-          const cantidadTotal = redondearNumero(cantidadPorUnidad * item.cantidad)
-          const key = `${insumo.id}-${nombreInsumo}`
-          
-          if (insumosMap.has(key)) {
-            const existing = insumosMap.get(key)!
-            existing.cantidadTotal = redondearNumero(existing.cantidadTotal + cantidadTotal)
+
+          // Si es cordón (cordon o cordon decorativo) y hay color del uniforme, concatenar el color
+          if ((insumo.nombre.toUpperCase().includes('CORDON')) && item.color) {
+            nombreInsumo = `${insumo.nombre} - ${item.color}`
+          }
+
+          // Si es cierre (cualquier tipo) y hay color del uniforme, concatenar el color
+          if (insumo.nombre.toUpperCase().startsWith('CIERRE') && item.color) {
+            nombreInsumo = `${insumo.nombre} - ${item.color}`
+          }
+
+          // Manejo especial para marquillas - separarlas por talla
+          if (insumo.nombre.toUpperCase().includes('MARQUILLA') && item.talla) {
+            const keyMarquilla = `${insumo.nombre} TALLA ${item.talla}`
+            const cantidadTotal = redondearNumero(cantidadPorUnidad * item.cantidad)
+            
+            if (marquillasPorTalla.has(keyMarquilla)) {
+              marquillasPorTalla.set(keyMarquilla, marquillasPorTalla.get(keyMarquilla)! + cantidadTotal)
+            } else {
+              marquillasPorTalla.set(keyMarquilla, cantidadTotal)
+            }
+            
+            // También crear entrada en el mapa principal para marquillas por talla
+            const keyMarquillaTalla = `${insumo.id}-${keyMarquilla}`
+            if (insumosMap.has(keyMarquillaTalla)) {
+              const existing = insumosMap.get(keyMarquillaTalla)!
+              existing.cantidadTotal = redondearNumero(existing.cantidadTotal + cantidadTotal)
+            } else {
+              insumosMap.set(keyMarquillaTalla, {
+                insumo: {
+                  ...insumo,
+                  nombre: keyMarquilla,
+                  cantidadPorUnidad
+                },
+                cantidadTotal
+              })
+            }
           } else {
-            insumosMap.set(key, {
-              insumo: {
-                ...insumo,
-                nombre: nombreInsumo,
-                cantidadPorUnidad
-              },
-              cantidadTotal
-            })
+            // Para todos los demás insumos (no marquillas)
+            const cantidadTotal = redondearNumero(cantidadPorUnidad * item.cantidad)
+            const key = `${insumo.id}-${nombreInsumo}`
+            
+            if (insumosMap.has(key)) {
+              const existing = insumosMap.get(key)!
+              existing.cantidadTotal = redondearNumero(existing.cantidadTotal + cantidadTotal)
+            } else {
+              insumosMap.set(key, {
+                insumo: {
+                  ...insumo,
+                  nombre: nombreInsumo,
+                  cantidadPorUnidad
+                },
+                cantidadTotal
+              })
+            }
           }
         })
       }
@@ -127,6 +167,21 @@ export const obtenerInsumosPorProducto = (items: ItemCotizacion[], productos: Pr
             // Si es sesgo y hay color de sesgo definido, concatenar el color al nombre
             if (insumo.nombre.toUpperCase().includes('SESGO') && item.colorSesgo) {
               nombreInsumo = `${insumo.nombre} ${item.colorSesgo}`
+            }
+
+            // Si es cordón (cordon o cordon decorativo) y hay color del uniforme, concatenar el color
+            if ((insumo.nombre.toUpperCase().includes('CORDON')) && item.color) {
+              nombreInsumo = `${insumo.nombre} - ${item.color}`
+            }
+
+            // Si es cierre (cualquier tipo) y hay color del uniforme, concatenar el color
+            if (insumo.nombre.toUpperCase().startsWith('CIERRE') && item.color) {
+              nombreInsumo = `${insumo.nombre} - ${item.color}`
+            }
+
+            // Para marquillas, agregar la talla al nombre
+            if (insumo.nombre.toUpperCase().includes('MARQUILLA') && item.talla) {
+              nombreInsumo = `${insumo.nombre} TALLA ${item.talla}`
             }
             
             return {

@@ -4,7 +4,7 @@ import type { ItemCotizacion, DatosProveedor } from './types'
 import { productos } from './data/productos'
 import { tallas } from './data/tallas'
 import { colores } from './data/colores'
-import { calcularValorTotal, calcularTotalCotizacion, calcularTotalesCotizacion, formatearMoneda, calcularInsumosRequeridos, obtenerInsumosPorProducto, generarCodigoCompleto, generarNombreCompleto, productoTieneSesgo } from './utils/calculation'
+import { calcularValorTotal, calcularTotalCotizacion, calcularTotalesCotizacion, formatearMoneda, calcularInsumosRequeridos, obtenerInsumosPorProducto, generarCodigoCompleto, generarNombreCompleto, productoTieneSesgo, agruparInsumosCompacto } from './utils/calculation'
 import { generarPDFCotizacion } from './utils/pdfGenerator'
 import { generateExcel } from './utils/excelGenerator'
 
@@ -135,6 +135,7 @@ function App() {
 
   const insumosRequeridos = calcularInsumosRequeridos(items, productos)
   const insumosPorProducto = obtenerInsumosPorProducto(items, productos)
+  const insumosAgrupados = agruparInsumosCompacto(insumosRequeridos)
 
   const descargarPDF = async () => {
     const itemsConDatos = items.filter(item => item.nombre && item.cantidad > 0)
@@ -554,7 +555,7 @@ function App() {
       <div className="cotizacion-container">
         <h2>Resumen General de Insumos</h2>
         
-        {insumosRequeridos.length > 0 ? (
+        {insumosAgrupados.length > 0 ? (
           <div className="tabla-container">
             <table className="tabla-insumos">
               <thead>
@@ -566,12 +567,29 @@ function App() {
                 </tr>
               </thead>
               <tbody>
-                {insumosRequeridos.map((insumoCalculado, index) => (
+                {insumosAgrupados.map((insumoCompacto, index) => (
                   <tr key={index}>
-                    <td className="nombre-insumo">{insumoCalculado.insumo.nombre}</td>
-                    <td className="cantidad-unitaria">{insumoCalculado.insumo.cantidadPorUnidad}</td>
-                    <td className="cantidad-total">{insumoCalculado.cantidadTotal}</td>
-                    <td className="unidad-medida">{insumoCalculado.insumo.unidadMedida}</td>
+                    <td className="nombre-insumo">
+                      {insumoCompacto.tipo === 'marquillas' ? (
+                        <div>
+                          <strong>{insumoCompacto.nombre}</strong>
+                          <div style={{ fontSize: '0.9em', color: '#666' }}>
+                            {insumoCompacto.tallas?.map(talla => 
+                              `${talla}: ${insumoCompacto.tallasData?.[talla]}`
+                            ).join(', ')}
+                          </div>
+                        </div>
+                      ) : insumoCompacto.tipo === 'marquilla-compacta' ? (
+                        insumoCompacto.data
+                      ) : (
+                        insumoCompacto.nombre
+                      )}
+                    </td>
+                    <td className="cantidad-unitaria">
+                      {insumoCompacto.cantidadPorUnidad || '-'}
+                    </td>
+                    <td className="cantidad-total">{insumoCompacto.cantidadTotal}</td>
+                    <td className="unidad-medida">{insumoCompacto.unidadMedida}</td>
                   </tr>
                 ))}
               </tbody>

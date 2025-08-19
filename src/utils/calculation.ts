@@ -1,4 +1,16 @@
-import type { ItemCotizacion, InsumoCalculado, Insumo, Producto } from '../types'
+import type { ItemCotizacion, Producto, InsumoCalculado, Insumo } from '../types'
+
+// Interfaz para insumos compactos
+interface InsumoCompacto {
+  tipo: 'normal' | 'marquillas' | 'marquilla-compacta'
+  nombre: string
+  cantidadPorUnidad?: number
+  cantidadTotal: number
+  unidadMedida?: string
+  tallasData?: { [talla: string]: number }
+  tallas?: string[]
+  data?: string
+}
 
 export const redondearNumero = (numero: number, decimales: number = 2): number => {
   return Math.round(numero * Math.pow(10, decimales)) / Math.pow(10, decimales)
@@ -65,8 +77,8 @@ export const productoTieneSesgo = (producto: Producto): boolean => {
 
 export const calcularInsumosRequeridos = (items: ItemCotizacion[], productos: Producto[]): InsumoCalculado[] => {
   const insumosMap = new Map<string, InsumoCalculado>()
-  const marquillasPorTalla = new Map<string, number>()
-
+  const marquillasPorTalla = new Map<string, Map<string, number>>()
+  
   items.forEach(item => {
     if (item.nombre && item.cantidad > 0) {
       const producto = productos.find(p => p.nombre === item.nombre)
@@ -95,31 +107,21 @@ export const calcularInsumosRequeridos = (items: ItemCotizacion[], productos: Pr
             nombreInsumo = `${insumo.nombre} - ${item.color}`
           }
 
-          // Manejo especial para marquillas - separarlas por talla
+          // Manejo especial para marquillas - agrupar por tipo y talla
           if (insumo.nombre.toUpperCase().includes('MARQUILLA') && item.talla) {
-            const keyMarquilla = `${insumo.nombre} TALLA ${item.talla}`
-            const cantidadTotal = redondearNumero(cantidadPorUnidad * item.cantidad)
+            const tipoMarquilla = insumo.nombre.toUpperCase().includes('CAMISA') ? 'MARQUILLA CAMISA' : 'MARQUILLA PANTALON'
             
-            if (marquillasPorTalla.has(keyMarquilla)) {
-              marquillasPorTalla.set(keyMarquilla, marquillasPorTalla.get(keyMarquilla)! + cantidadTotal)
-            } else {
-              marquillasPorTalla.set(keyMarquilla, cantidadTotal)
+            if (!marquillasPorTalla.has(tipoMarquilla)) {
+              marquillasPorTalla.set(tipoMarquilla, new Map())
             }
             
-            // También crear entrada en el mapa principal para marquillas por talla
-            const keyMarquillaTalla = `${insumo.id}-${keyMarquilla}`
-            if (insumosMap.has(keyMarquillaTalla)) {
-              const existing = insumosMap.get(keyMarquillaTalla)!
-              existing.cantidadTotal = redondearNumero(existing.cantidadTotal + cantidadTotal)
+            const tallasMap = marquillasPorTalla.get(tipoMarquilla)!
+            const cantidadTotal = redondearNumero(cantidadPorUnidad * item.cantidad)
+            
+            if (tallasMap.has(item.talla)) {
+              tallasMap.set(item.talla, tallasMap.get(item.talla)! + cantidadTotal)
             } else {
-              insumosMap.set(keyMarquillaTalla, {
-                insumo: {
-                  ...insumo,
-                  nombre: keyMarquilla,
-                  cantidadPorUnidad
-                },
-                cantidadTotal
-              })
+              tallasMap.set(item.talla, cantidadTotal)
             }
           } else {
             // Para todos los demás insumos (no marquillas)
@@ -143,6 +145,24 @@ export const calcularInsumosRequeridos = (items: ItemCotizacion[], productos: Pr
         })
       }
     }
+  })
+
+  // Agregar las marquillas agrupadas por talla
+  marquillasPorTalla.forEach((tallasMap, tipoMarquilla) => {
+    const key = `marquilla-${tipoMarquilla}`
+    const tallasArray = Array.from(tallasMap.entries()).sort()
+    const nombreCompleto = `${tipoMarquilla} (${tallasArray.map(([talla, cantidad]) => `${talla}: ${cantidad}`).join(', ')})`
+    const totalCantidad = Array.from(tallasMap.values()).reduce((sum, cant) => sum + cant, 0)
+    
+    insumosMap.set(key, {
+      insumo: {
+        id: 'marquilla',
+        nombre: nombreCompleto,
+        cantidadPorUnidad: 1,
+        unidadMedida: 'unidades'
+      },
+      cantidadTotal: totalCantidad
+    })
   })
 
   return Array.from(insumosMap.values())
@@ -198,4 +218,95 @@ export const obtenerInsumosPorProducto = (items: ItemCotizacion[], productos: Pr
     }
     return null
   }).filter(Boolean)
+}
+
+// Nueva función para agrupar insumos de manera compacta
+export const agruparInsumosCompacto = (insumos: InsumoCalculado[]): InsumoCompacto[] => {
+  const insumosCompactos: InsumoCompacto[] = []
+  const marquillasData: { [key: string]: { [talla: string]: number } } = {}
+  const insumosAgrupados: { [key: string]: { cantidadTotal: number, cantidadPorUnidad: number, unidadMedida: string } } = {}
+
+  insumos.forEach(insumoCalculado => {
+    const nombre = insumoCalculado.insumo.nombre.toUpperCase()
+
+    // Procesar marquillas
+    if (nombre.includes('MARQUILLA')) {
+      // Extraer el tipo base de marquilla (CAMISA o PANTALON)
+      let tipoBase = 'MARQUILLA'
+      if (nombre.includes('CAMISA')) {
+        tipoBase = 'MARQUILLA CAMISA'
+      } else if (nombre.includes('PANTALON')) {
+        tipoBase = 'MARQUILLA PANTALON'
+      }
+
+      // Si es una marquilla con formato compacto ya procesado, no procesarla de nuevo
+      if (nombre.includes('(') && nombre.includes(':')) {
+        insumosCompactos.push({
+          tipo: 'marquilla-compacta',
+          nombre: tipoBase,
+          data: nombre,
+          cantidadTotal: insumoCalculado.cantidadTotal,
+          unidadMedida: insumoCalculado.insumo.unidadMedida
+        })
+        return
+      }
+
+      // Extraer talla del nombre (formato: "MARQUILLA CAMISA TALLA M")
+      const tallasMatch = nombre.match(/TALLA\s+(\w+)/)
+      if (tallasMatch) {
+        const talla = tallasMatch[1]
+        
+        if (!marquillasData[tipoBase]) {
+          marquillasData[tipoBase] = {}
+        }
+        
+        if (marquillasData[tipoBase][talla]) {
+          marquillasData[tipoBase][talla] += insumoCalculado.cantidadTotal
+        } else {
+          marquillasData[tipoBase][talla] = insumoCalculado.cantidadTotal
+        }
+        return
+      }
+    }
+
+    // Para todos los demás insumos (incluyendo BOLSA, ETIQUETA CARTON, etc.), agruparlos por nombre
+    const nombreOriginal = insumoCalculado.insumo.nombre
+    if (insumosAgrupados[nombreOriginal]) {
+      insumosAgrupados[nombreOriginal].cantidadTotal += insumoCalculado.cantidadTotal
+    } else {
+      insumosAgrupados[nombreOriginal] = {
+        cantidadTotal: insumoCalculado.cantidadTotal,
+        cantidadPorUnidad: insumoCalculado.insumo.cantidadPorUnidad,
+        unidadMedida: insumoCalculado.insumo.unidadMedida
+      }
+    }
+  })
+
+  // Agregar todos los insumos agrupados (no marquillas)
+  Object.entries(insumosAgrupados).forEach(([nombre, data]) => {
+    insumosCompactos.push({
+      tipo: 'normal',
+      nombre: nombre,
+      cantidadPorUnidad: data.cantidadPorUnidad,
+      cantidadTotal: data.cantidadTotal,
+      unidadMedida: data.unidadMedida
+    })
+  })
+
+  // Agregar marquillas agrupadas por talla
+  Object.entries(marquillasData).forEach(([tipoMarquilla, tallasObj]) => {
+    const tallas = Object.keys(tallasObj).sort()
+    const totalCantidad = Object.values(tallasObj).reduce((sum, cant) => sum + cant, 0)
+    
+    insumosCompactos.push({
+      tipo: 'marquillas',
+      nombre: tipoMarquilla,
+      tallasData: tallasObj,
+      tallas: tallas,
+      cantidadTotal: totalCantidad,
+      unidadMedida: 'unidades'
+    })
+  })
+
+  return insumosCompactos
 }

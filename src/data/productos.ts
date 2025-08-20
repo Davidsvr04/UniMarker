@@ -213,7 +213,7 @@ export const productos: Producto[] = [
   {
     "codigo": "10",
     "nombre": "CRUZADO DAMA PANTALON TRADICIONAL ",
-    "valorUnitario": 8500,
+    "valorUnitario": 13000,
     "insumos": [
       { "id": "1", "nombre": "TELA PROMEDIO", "cantidadPorUnidad": 2.09, "unidadMedida": "metros" },
       { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
@@ -230,7 +230,7 @@ export const productos: Producto[] = [
   {
     "codigo": "01-10",
     "nombre": "CRUZADO DAMA PANTALON TRADICIONAL CAMISA",
-    "valorUnitario": 8500,
+    "valorUnitario": 13000,
     "insumos": [
       { "id": "1", "nombre": "TELA PROMEDIO", "cantidadPorUnidad": 2.09, "unidadMedida": "metros" },
       { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
@@ -244,53 +244,10 @@ export const productos: Producto[] = [
   {
     "codigo": "02-10",
     "nombre": "CRUZADO DAMA PANTALON TRADICIONAL PANTALON",
-    "valorUnitario": 8500,
+    "valorUnitario": 13000,
     "insumos": [
       { "id": "1", "nombre": "TELA PROMEDIO", "cantidadPorUnidad": 2.09, "unidadMedida": "metros" },
       { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "BANDERA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-    ]
-  },
-  {
-    "codigo": "10",
-    "nombre": "CRUZADO DAMA PANTALON TRADICIONAL",
-    "valorUnitario": 8500,
-    "insumos": [
-      { "id": "1", "nombre": "TELA PROMEDIO", "cantidadPorUnidad": 2.09, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "BANDERA CONJUNTO", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
-      { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "7", "nombre": "SESGO PLANO PLANCHADO", "cantidadPorUnidad": 2.1, "unidadMedida": "metros" },
-      { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 1.1, "unidadMedida": "metros" },
-      { "id": "9", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "10", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-    ]
-  },
-  {
-    "codigo": "02-10",
-    "nombre": "CRUZADO DAMA PANTALON TRADICIONAL CAMISA",
-    "valorUnitario": 8500,
-    "insumos": [
-      { "id": "1", "nombre": "TELA PROMEDIO", "cantidadPorUnidad": 2.09, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "BANDERA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "7", "nombre": "SESGO PLANO PLANCHADO", "cantidadPorUnidad": 2.1, "unidadMedida": "metros" },
-      { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 1.1, "unidadMedida": "metros" },
-      { "id": "9", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "10", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-    ]
-  },
-  {
-    "codigo": "02-10",
-    "nombre": "CRUZADO DAMA PANTALON TRADICIONAL PANTALON",
-    "valorUnitario": 8500,
-    "insumos": [
-      { "id": "1", "nombre": "TELA PROMEDIO", "cantidadPorUnidad": 2.09, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "4", "nombre": "BANDERA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
       { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },

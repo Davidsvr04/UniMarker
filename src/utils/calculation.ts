@@ -282,31 +282,73 @@ export const agruparInsumosCompacto = (insumos: InsumoCalculado[]): InsumoCompac
     }
   })
 
-  // Agregar todos los insumos agrupados (no marquillas)
-  Object.entries(insumosAgrupados).forEach(([nombre, data]) => {
-    insumosCompactos.push({
-      tipo: 'normal',
-      nombre: nombre,
-      cantidadPorUnidad: data.cantidadPorUnidad,
-      cantidadTotal: data.cantidadTotal,
-      unidadMedida: data.unidadMedida
-    })
+  // Definir el orden de prioridad para los insumos
+  const ordenPrioridad = [
+    'MARQUILLA CAMISA',
+    'MARQUILLA PANTALON', 
+    'BANDERA CAMISA',
+    'BANDERA PANTALON',
+    'TELA',
+    'ELASTICO',
+    'BOLSA',
+    'ETIQUETA CARTON'
+  ]
+
+  // Agregar marquillas agrupadas por talla (con prioridad)
+  const marquillasOrdenadas = ['MARQUILLA CAMISA', 'MARQUILLA PANTALON']
+  marquillasOrdenadas.forEach(tipoMarquilla => {
+    if (marquillasData[tipoMarquilla]) {
+      const tallasObj = marquillasData[tipoMarquilla]
+      const tallas = Object.keys(tallasObj).sort()
+      const totalCantidad = Object.values(tallasObj).reduce((sum, cant) => sum + cant, 0)
+      
+      insumosCompactos.push({
+        tipo: 'marquillas',
+        nombre: tipoMarquilla,
+        tallasData: tallasObj,
+        tallas: tallas,
+        cantidadTotal: totalCantidad,
+        unidadMedida: 'unidades'
+      })
+    }
   })
 
-  // Agregar marquillas agrupadas por talla
-  Object.entries(marquillasData).forEach(([tipoMarquilla, tallasObj]) => {
-    const tallas = Object.keys(tallasObj).sort()
-    const totalCantidad = Object.values(tallasObj).reduce((sum, cant) => sum + cant, 0)
+  // Crear un array temporal para ordenar los insumos normales
+  const insumosNormalesArray = Object.entries(insumosAgrupados).map(([nombre, data]) => ({
+    tipo: 'normal' as const,
+    nombre: nombre,
+    cantidadPorUnidad: data.cantidadPorUnidad,
+    cantidadTotal: data.cantidadTotal,
+    unidadMedida: data.unidadMedida
+  }))
+
+  // Ordenar los insumos normales según la prioridad definida
+  insumosNormalesArray.sort((a, b) => {
+    const nombreA = a.nombre.toUpperCase()
+    const nombreB = b.nombre.toUpperCase()
     
-    insumosCompactos.push({
-      tipo: 'marquillas',
-      nombre: tipoMarquilla,
-      tallasData: tallasObj,
-      tallas: tallas,
-      cantidadTotal: totalCantidad,
-      unidadMedida: 'unidades'
-    })
+    // Buscar la posición en el orden de prioridad
+    let posicionA = ordenPrioridad.findIndex(item => nombreA.includes(item))
+    let posicionB = ordenPrioridad.findIndex(item => nombreB.includes(item))
+    
+    // Si no se encuentra en la lista de prioridad, asignar una posición alta
+    if (posicionA === -1) posicionA = 999
+    if (posicionB === -1) posicionB = 999
+    
+    // Si tienen la misma prioridad, ordenar alfabéticamente
+    if (posicionA === posicionB) {
+      // Para cordones, ordenar por color
+      if (nombreA.includes('CORDON') && nombreB.includes('CORDON')) {
+        return nombreA.localeCompare(nombreB)
+      }
+      return a.nombre.localeCompare(b.nombre)
+    }
+    
+    return posicionA - posicionB
   })
+
+  // Agregar los insumos normales ordenados
+  insumosCompactos.push(...insumosNormalesArray)
 
   return insumosCompactos
 }

@@ -34,7 +34,8 @@ export const colores: Color[] = [
   { codigo: '31', nombre: 'VERDE MENTA' },
   { codigo: '32', nombre: 'VERDE MILITAR' },
   { codigo: '33', nombre: 'VINO TINTO' },
-  { codigo: '34', nombre: 'CLARO' },
-  { codigo: '35', nombre: 'OSCURO' },
-  { codigo: '36', nombre: 'UNICO' }
+  { codigo: '34', nombre: 'PISTACHO' },
+  { codigo: '35', nombre: 'CLARO' },
+  { codigo: '36', nombre: 'OSCURO' },
+  { codigo: '37', nombre: 'UNICO' }
 ]

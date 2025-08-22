@@ -145,12 +145,6 @@ function App() {
       return
     }
 
-    // Validar datos básicos del proveedor
-    if (!datosProveedor.nombre || !datosProveedor.numeroOrden) {
-      alert('Por favor, complete al menos el número de orden y el nombre del confeccionista')
-      return
-    }
-
     try {
       const { total } = calcularTotalesCotizacion(itemsConDatos)
       const datosConValorTotal = {
@@ -173,12 +167,6 @@ function App() {
 
     if (itemsConDatos.length === 0) {
       alert('Por favor, agregue al menos un producto con cantidad antes de generar el Excel')
-      return
-    }
-
-    // Validar datos básicos del proveedor
-    if (!datosProveedor.nombre || !datosProveedor.numeroOrden) {
-      alert('Por favor, complete al menos el número de orden y el nombre del confeccionista')
       return
     }
 

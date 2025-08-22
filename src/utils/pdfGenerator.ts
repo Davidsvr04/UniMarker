@@ -1,7 +1,7 @@
 import jsPDF from 'jspdf'
 import autoTable from 'jspdf-autotable'
 import type { ItemCotizacion, DatosProveedor } from '../types'
-import { formatearMoneda, calcularTotalCotizacion, calcularInsumosRequeridos, obtenerInsumosPorProducto, generarNombreCompleto } from './calculation'
+import { formatearMoneda, calcularTotalCotizacion, calcularInsumosRequeridos, generarNombreCompleto } from './calculation'
 import { productos } from '../data/productos'
 
 interface ExtendedJsPDF extends jsPDF {
@@ -146,75 +146,10 @@ export const generarPDFCotizacion = async (
   
   yPosition += 20
 
-  if (yPosition > 250) {
-    doc.addPage()
-    yPosition = 20
-  }
+  // Forzar nueva página para la tabla de insumos generales
+  doc.addPage()
+  yPosition = 20
 
-  doc.setFontSize(12)
-  doc.setFont('helvetica', 'bold')
-  doc.text('INSUMOS POR PRODUCTO', 15, yPosition)
-  yPosition += 10
-
-  const insumosPorProducto = obtenerInsumosPorProducto(itemsValidos, productos)
-  
-  for (const productoDatos of insumosPorProducto) {
-    if (!productoDatos) continue
-    
-    if (yPosition > 230) {
-      doc.addPage()
-      yPosition = 20
-    }
-
-    doc.setFontSize(10)
-    doc.setFont('helvetica', 'bold')
-    const nombreProducto = generarNombreCompleto(
-      productoDatos.item.nombre, 
-      productoDatos.item.talla, 
-      productoDatos.item.color
-    )
-    doc.text(`${nombreProducto} - Cantidad: ${productoDatos.item.cantidad}`, 15, yPosition)
-    yPosition += 8
-
-    const datosInsumosProducto = productoDatos.insumos.map(insumoData => [
-      insumoData.insumo.nombre,
-      insumoData.insumo.cantidadPorUnidad.toString(),
-      insumoData.cantidadTotal.toString(),
-      insumoData.insumo.unidadMedida
-    ])
-
-    autoTable(doc, {
-      startY: yPosition,
-      head: [['Insumo', 'Cant. por Unidad', 'Cant. Total', 'Unidad']],
-      body: datosInsumosProducto,
-      theme: 'striped',
-      headStyles: {
-        fillColor: [52, 152, 219],
-        textColor: 255,
-        fontStyle: 'bold',
-        fontSize: 8
-      },
-      bodyStyles: {
-        fontSize: 8
-      },
-      columnStyles: {
-        0: { cellWidth: 70 }, 
-        1: { cellWidth: 30, halign: 'center' }, 
-        2: { cellWidth: 30, halign: 'center' }, 
-        3: { cellWidth: 25, halign: 'center' } 
-      },
-      margin: { left: 20, right: 15 }
-    })
-
-    yPosition = doc.lastAutoTable?.finalY ? doc.lastAutoTable.finalY + 8 : yPosition + 8
-  }
-
-  if (yPosition > 200) {
-    doc.addPage()
-    yPosition = 20
-  }
-
-  yPosition += 10
   doc.setFontSize(12)
   doc.setFont('helvetica', 'bold')
   doc.text('RESUMEN GENERAL DE INSUMOS', 15, yPosition)
@@ -261,16 +196,33 @@ export const generarPDFCotizacion = async (
 
   const fechaActual = new Date().toISOString().split('T')[0]
   
-  const nombreLimpio = datosProveedor.nombre
-    .replace(/[^a-zA-Z0-9\s]/g, '')
-    .replace(/\s+/g, '_')
-    .substring(0, 20) 
+  // Verificar si los campos críticos están llenos
+  const tieneNumeroOrden = datosProveedor.numeroOrden && datosProveedor.numeroOrden.trim() !== ''
+  const tieneNombreConfeccionista = datosProveedor.nombre && datosProveedor.nombre.trim() !== ''
   
-  const numeroOrdenLimpio = datosProveedor.numeroOrden
-    .replace(/[^a-zA-Z0-9]/g, '')
-    .substring(0, 15) 
+  let nombreArchivo: string
   
-  const nombreArchivo = `${numeroOrdenLimpio || 'SN'}_${nombreLimpio || 'Confeccionista'}_${fechaActual}.pdf`
+  if (!tieneNumeroOrden && !tieneNombreConfeccionista) {
+    // Generar nombre aleatorio si faltan ambos campos
+    const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+    let codigoAleatorio = ''
+    for (let i = 0; i < 8; i++) {
+      codigoAleatorio += caracteres.charAt(Math.floor(Math.random() * caracteres.length))
+    }
+    nombreArchivo = `Orden_${codigoAleatorio}_${fechaActual}.pdf`
+  } else {
+    // Usar la lógica original si al menos uno de los campos está lleno
+    const nombreLimpio = datosProveedor.nombre
+      .replace(/[^a-zA-Z0-9\s]/g, '')
+      .replace(/\s+/g, '_')
+      .substring(0, 20) 
+    
+    const numeroOrdenLimpio = datosProveedor.numeroOrden
+      .replace(/[^a-zA-Z0-9]/g, '')
+      .substring(0, 15) 
+    
+    nombreArchivo = `${numeroOrdenLimpio || 'SN'}_${nombreLimpio || 'Confeccionista'}_${fechaActual}.pdf`
+  }
 
   doc.save(nombreArchivo)
   

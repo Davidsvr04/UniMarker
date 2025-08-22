@@ -92,7 +92,28 @@ export function generateExcel(
   
   // Generar nombre del archivo con fecha y número de orden
   const fecha = new Date().toLocaleDateString('es-CO').replace(/\//g, '-')
-  const nombreArchivo = `Cotizacion_${datosProveedor.numeroOrden || 'SinNumero'}_${fecha}.xlsx`
+  
+  // Verificar si los campos críticos están llenos
+  const tieneNumeroOrden = datosProveedor.numeroOrden && datosProveedor.numeroOrden.trim() !== ''
+  const tieneNombreConfeccionista = datosProveedor.nombre && datosProveedor.nombre.trim() !== ''
+  
+  let nombreArchivo: string
+  
+  if (!tieneNumeroOrden && !tieneNombreConfeccionista) {
+    // Generar nombre aleatorio si faltan ambos campos
+    const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+    let codigoAleatorio = ''
+    for (let i = 0; i < 8; i++) {
+      codigoAleatorio += caracteres.charAt(Math.floor(Math.random() * caracteres.length))
+    }
+    nombreArchivo = `Cotizacion_${codigoAleatorio}_${fecha}.xlsx`
+  } else {
+    // Usar la lógica original si al menos uno de los campos está lleno
+    const numeroOrdenLimpio = (datosProveedor.numeroOrden || 'SinNumero')
+      .replace(/[^a-zA-Z0-9]/g, '')
+      .substring(0, 15)
+    nombreArchivo = `Cotizacion_${numeroOrdenLimpio}_${fecha}.xlsx`
+  }
   
   link.download = nombreArchivo
   link.click()

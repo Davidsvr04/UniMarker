@@ -718,11 +718,13 @@ export const productos: Producto[] = [
       { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "4", "nombre": "BANDERA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "5", "nombre": "BANDERA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "6", "nombre": "ELASTICO 5CM", "cantidadPorUnidad": 0.65, "unidadMedida": "metros" },
-      { "id": "7", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 2, "unidadMedida": "metros" },
-      { "id": "9", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "10", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "6", "nombre": "ELASTICO 4CM", "cantidadPorUnidad": 0.65, "unidadMedida": "metros" },
+      { "id": "7", "nombre": "CIERRE 15CM", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
+      { "id": "8", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "9", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 1, "unidadMedida": "metros" },
+      { "id": "10", "nombre": "SESGO PLANO", "cantidadPorUnidad": 0.30, "unidadMedida": "metros" },
+      { "id": "11", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "12", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
   },
   {
@@ -733,7 +735,8 @@ export const productos: Producto[] = [
       { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 2.3, "unidadMedida": "metros" },
       { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "4", "nombre": "BANDERA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "7", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 2, "unidadMedida": "metros" },
+      { "id": "5", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 2, "unidadMedida": "metros" },
+      { "id": "6", "nombre": "SESGO PLANO", "cantidadPorUnidad": 0.30, "unidadMedida": "metros" },
       { "id": "7", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "8", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
@@ -748,6 +751,7 @@ export const productos: Producto[] = [
       { "id": "4", "nombre": "BANDERA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "5", "nombre": "ELASTICO 5CM", "cantidadPorUnidad": 0.65, "unidadMedida": "metros" },
       { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "7", "nombre": "CIERRE 15CM", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
     ]
   },
   {

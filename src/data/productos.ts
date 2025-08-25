@@ -227,7 +227,7 @@ export const productos: Producto[] = [
       { "id": "5", "nombre": "BANDERA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "6", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
       { "id": "7", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "8", "nombre": "SESGO PLANO PLANCHADO", "cantidadPorUnidad": 2.1, "unidadMedida": "metros" },
+      { "id": "8", "nombre": "SESGO PLANO", "cantidadPorUnidad": 2.1, "unidadMedida": "metros" },
       { "id": "9", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 1.1, "unidadMedida": "metros" },
       { "id": "10", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "11", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
@@ -241,7 +241,7 @@ export const productos: Producto[] = [
       { "id": "1", "nombre": "TELA PROMEDIO", "cantidadPorUnidad": 2.09, "unidadMedida": "metros" },
       { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "4", "nombre": "BANDERA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "7", "nombre": "SESGO PLANO PLANCHADO", "cantidadPorUnidad": 2.1, "unidadMedida": "metros" },
+      { "id": "7", "nombre": "SESGO PLANO", "cantidadPorUnidad": 2.1, "unidadMedida": "metros" },
       { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 1.1, "unidadMedida": "metros" },
       { "id": "9", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "10", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
@@ -356,7 +356,7 @@ export const productos: Producto[] = [
       { "id": "7", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "8", "nombre": "CIERRE INVISIBLE 30", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "9", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 2.3, "unidadMedida": "metros" },
-      { "id": "10", "nombre": "SESGO PLANO PLANCHADO", "cantidadPorUnidad": 0.4, "unidadMedida": "metros" },
+      { "id": "10", "nombre": "SESGO PLANO", "cantidadPorUnidad": 0.4, "unidadMedida": "metros" },
       { "id": "11", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "12", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
@@ -371,7 +371,7 @@ export const productos: Producto[] = [
       { "id": "4", "nombre": "BANDERA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "7", "nombre": "CIERRE INVISIBLE 30", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 2.3, "unidadMedida": "metros" },
-      { "id": "9", "nombre": "SESGO PLANO PLANCHADO", "cantidadPorUnidad": 0.4, "unidadMedida": "metros" },
+      { "id": "9", "nombre": "SESGO PLANO", "cantidadPorUnidad": 0.4, "unidadMedida": "metros" },
       { "id": "10", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "11", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
@@ -1028,7 +1028,7 @@ export const productos: Producto[] = [
       { "id": "7", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "8", "nombre": "CIERRE PLASTICO 15CM", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "9", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 3.1, "unidadMedida": "metros" },
-      { "id": "10", "nombre": "SESGO PLANO PLANCHADO", "cantidadPorUnidad": 0.15, "unidadMedida": "metros" },
+      { "id": "10", "nombre": "SESGO PLANO", "cantidadPorUnidad": 0.15, "unidadMedida": "metros" },
       { "id": "11", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "12", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]
@@ -1043,7 +1043,7 @@ export const productos: Producto[] = [
       { "id": "4", "nombre": "BANDERA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "7", "nombre": "CIERRE PLASTICO 15CM", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "8", "nombre": "SESGO EMPITADO", "cantidadPorUnidad": 3.1, "unidadMedida": "metros" },
-      { "id": "9", "nombre": "SESGO PLANO PLANCHADO", "cantidadPorUnidad": 0.15, "unidadMedida": "metros" },
+      { "id": "9", "nombre": "SESGO PLANO", "cantidadPorUnidad": 0.15, "unidadMedida": "metros" },
       { "id": "10", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "11", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]

@@ -55,14 +55,14 @@ export const formatearMoneda = (valor: number): string => {
 
 // Cantidades de elástico por talla
 const cantidadesElasticoPorTalla: Record<string, number> = {
-  'XS': 0.58,
-  'S': 0.60,
-  'M': 0.62,
-  'L': 0.64,
-  'XL': 0.66,
-  'XXL': 0.68,
-  'XXXL': 0.70,
-  'XXXXL': 0.72
+  'XS': 0.60,
+  'S': 0.62,
+  'M': 0.64,
+  'L': 0.66,
+  'XL': 0.68,
+  'XXL': 0.70,
+  'XXXL': 0.72,
+  'XXXXL': 0.74
 }
 
 export const obtenerCantidadElastico = (talla: string): number => {

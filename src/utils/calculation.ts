@@ -84,6 +84,16 @@ export const calcularInsumosRequeridos = (items: ItemCotizacion[], productos: Pr
       const producto = productos.find(p => p.nombre === item.nombre)
       if (producto && producto.insumos) {
         producto.insumos.forEach((insumo: Insumo) => {
+          // Validación especial para UCC con color AZUL REY
+          const esProductoUCC = item.nombre.toUpperCase().includes('UCC')
+          const esColorAzulRey = item.color && item.color.toUpperCase() === 'AZUL REY'
+          const esSesgoEmpitado = insumo.nombre.toUpperCase().includes('SESGO EMPITADO')
+          
+          // Si es producto UCC, color AZUL REY y el insumo es SESGO EMPITADO, omitirlo
+          if (esProductoUCC && esColorAzulRey && esSesgoEmpitado) {
+            return // Saltar este insumo
+          }
+          
           let cantidadPorUnidad = insumo.cantidadPorUnidad
           let nombreInsumo = insumo.nombre
           
@@ -175,7 +185,21 @@ export const obtenerInsumosPorProducto = (items: ItemCotizacion[], productos: Pr
       if (producto && producto.insumos) {
         return {
           item,
-          insumos: producto.insumos.map(insumo => {
+          insumos: producto.insumos
+            .filter(insumo => {
+              // Filtrar SESGO EMPITADO para UCC con color AZUL REY
+              const esProductoUCC = item.nombre.toUpperCase().includes('UCC')
+              const esColorAzulRey = item.color && item.color.toUpperCase() === 'AZUL REY'
+              const esSesgoEmpitado = insumo.nombre.toUpperCase().includes('SESGO EMPITADO')
+              
+              // Si es UCC + AZUL REY + SESGO EMPITADO, excluirlo
+              if (esProductoUCC && esColorAzulRey && esSesgoEmpitado) {
+                return false
+              }
+              
+              return true
+            })
+            .map(insumo => {
             let cantidadPorUnidad = insumo.cantidadPorUnidad
             let nombreInsumo = insumo.nombre
             

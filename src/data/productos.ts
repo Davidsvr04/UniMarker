@@ -733,45 +733,6 @@ export const productos: Producto[] = [
     ]
   },
   {
-    "codigo": "45",
-    "nombre": "CUELLO V DOTACION",
-    "valorUnitario": 8500,
-    "insumos": [
-      { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 2.028, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "BANDERA CONJUNTO", "cantidadPorUnidad": 2, "unidadMedida": "unidades" },
-      { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "7", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "8", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-    ]
-  },
-  {
-    "codigo": "01-45",
-    "nombre": "CUELLO V DOTACION CAMISA",
-    "valorUnitario": 8500,
-    "insumos": [
-      { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 2.028, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "BANDERA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "7", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "8", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-    ]
-  },
-  {
-    "codigo": "02-45",
-    "nombre": "CUELLO V DOTACION PANTALON",
-    "valorUnitario": 8500,
-    "insumos": [
-      { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 2.028, "unidadMedida": "metros" },
-      { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "BANDERA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "5", "nombre": "ELASTICO", "cantidadPorUnidad": 0.85, "unidadMedida": "metros" },
-      { "id": "6", "nombre": "CORDON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-    ]
-  },
-  {
     "codigo": "36",
     "nombre": "CUELLO ROMA",
     "valorUnitario": 15000,

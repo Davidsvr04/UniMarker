@@ -1059,7 +1059,7 @@ export const productos: Producto[] = [
       { "id": "4", "nombre": "TALLA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "5", "nombre": "BANDERA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "6", "nombre": "OJALADA Y ABOTONADA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "7", "nombre": "CIERRE DE 15", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "7", "nombre": "CIERRE DE 15CM", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "8", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "9", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
     ]

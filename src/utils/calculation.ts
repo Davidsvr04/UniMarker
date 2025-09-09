@@ -234,10 +234,10 @@ export const agruparInsumosCompacto = (insumos: InsumoCalculado[]): InsumoCompac
     if (nombre.includes('MARQUILLA')) {
       // Extraer el tipo base de marquilla (CAMISA o PANTALON)
       let tipoBase = 'MARQUILLA'
-      if (nombre.includes('CAMISA')) {
-        tipoBase = 'MARQUILLA CAMISA'
-      } else if (nombre.includes('PANTALON')) {
+      if (nombre.includes('PANTALON')) {
         tipoBase = 'MARQUILLA PANTALON'
+      } else if (nombre.includes('CAMISA')) {
+        tipoBase = 'MARQUILLA CAMISA'
       }
 
       // Si es una marquilla con formato compacto ya procesado, no procesarla de nuevo

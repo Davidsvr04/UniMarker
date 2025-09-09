@@ -1163,7 +1163,7 @@ export const productos: Producto[] = [
     "insumos": [
       { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 1.39, "unidadMedida": "metros" },
       { "id": "2", "nombre": "CIERRE DE 55CM", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "3", "nombre": "MARQUILLA CAMSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
+      { "id": "3", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "4", "nombre": "BANDERA BATA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "5", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
       { "id": "6", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },

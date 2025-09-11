@@ -1200,7 +1200,7 @@ export const productos: Producto[] = [
 
   {
     "codigo": "02-55",
-    "nombre": "CONJUNTO CUELLO NERÚ - Pantalon",
+    "nombre": "CONJUNTO CUELLO NERÚ - PANTALON",
     "valorUnitario": 11000,
     "insumos": [
       { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 2.028, "unidadMedida": "metros" },

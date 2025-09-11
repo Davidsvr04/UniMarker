@@ -1213,40 +1213,8 @@ export const productos: Producto[] = [
     ]
   },
 
-  {
-    "codigo": "57",
-    "nombre": "CUELLO V CIERRE HOMBRE - GENERO",
-    "valorUnitario": 8500,
-    "insumos": [
-      { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 1.88, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "ELASTICO", "cantidadPorUnidad": 0.95, "unidadMedida": "metros" },
-      { "id": "5", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "6", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-    ]
-  },
-  {
-    "codigo": "01-57",
-    "nombre": "CUELLO V CIERRE HOMBRE - GENERO CAMISA",
-    "valorUnitario": 8500,
-    "insumos": [
-      { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 1.88, "unidadMedida": "metros" },
-      { "id": "2", "nombre": "MARQUILLA CAMISA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "5", "nombre": "ETIQUETA CARTON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "6", "nombre": "BOLSA", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-    ]
-  },
-  {
-    "codigo": "02-57",
-    "nombre": "CUELLO V CIERRE HOMBRE - GENERO PANTALON",
-    "valorUnitario": 8500,
-    "insumos": [
-      { "id": "1", "nombre": "TELA", "cantidadPorUnidad": 1.88, "unidadMedida": "metros" },
-      { "id": "3", "nombre": "MARQUILLA PANTALON", "cantidadPorUnidad": 1, "unidadMedida": "unidades" },
-      { "id": "4", "nombre": "ELASTICO", "cantidadPorUnidad": 0.95, "unidadMedida": "metros" },
-
-    ]
-  },
+  
+  
+  
 
 ]
